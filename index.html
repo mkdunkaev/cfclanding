@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBC Academy — Онлайн-школа SMM</title>
+    <meta name="description" content="CBC Academy — элитная онлайн-школа SMM. Стань СММ-специалистом и зарабатывай из дома. Набор открыт.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========================
+           RESET & ROOT
+           ======================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            /* Gold */
+            --gold:        #C8A52A;
+            --gold-light:  #D9B840;
+            --gold-dark:   #9A7B1C;
+            --gold-muted:  rgba(200, 165, 42, 0.18);
+            --gold-border: rgba(200, 165, 42, 0.45);
+
+            /* Palette from references */
+            --cream:       #DAD6CD;   /* Ivory Lace */
+            --sand:        #A39A8D;   /* Velvet Sandstone */
+            --caramel:     #A9855F;   /* Gilded Caramel */
+            --espresso:    #635549;   /* Espresso Suede */
+            --noir:        #151311;   /* Eclipse Noir */
+
+            /* Beige light backgrounds */
+            --bg-0:    #EDE8DE;   /* main — warm ivory */
+            --bg-1:    #E3DCCE;   /* alt section — deeper warm beige */
+            --bg-2:    #D8D0C0;   /* deepest */
+            --bg-card: #F5F1E8;   /* cards — near-white cream */
+            --bg-card-h: #FAF7F0; /* card hover */
+
+            /* Dark text on beige */
+            --text-1: #151311;   /* Eclipse Noir */
+            --text-2: #4A4038;   /* dark warm medium */
+            --text-3: #7A6E63;   /* muted warm */
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-0);
+            color: var(--text-1);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Cinzel', serif; letter-spacing: 0.04em; }
+
+        section { padding: 110px 24px; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ========================
+           UTILITY
+           ======================== */
+        .gold { color: var(--gold); }
+
+        .gold-text {
+            background: linear-gradient(135deg, #9A7B1C 0%, #D9B840 45%, #C8A52A 60%, #E8CC50 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(30px, 4.5vw, 52px);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .gold-rule {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 22px auto;
+        }
+
+        /* ========================
+           SCROLLBAR
+           ======================== */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--bg-0); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
+        ::selection { background: var(--gold); color: var(--bg-0); }
+
+        /* ========================
+           NAVIGATION
+           ======================== */
+        #navbar {
+            position: fixed;
+            inset: 0 0 auto;
+            z-index: 1000;
+            padding: 10px 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            background: rgba(237, 232, 222, 0.94);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gold-border);
+            transition: padding 0.3s;
+        }
+
+        /* ---- Nav Logo ---- */
+        .nav-logo {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+            transition: opacity 0.3s;
+        }
+        .nav-logo:hover { opacity: 0.8; }
+        .nav-logo-img {
+            height: 74px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-2);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.25s;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+
+        .nav-btn {
+            flex-shrink: 0;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            background: transparent;
+            padding: 10px 26px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.25s, color 0.25s;
+            white-space: nowrap;
+        }
+
+        .nav-btn:hover {
+            background: var(--gold);
+            color: #151311;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            flex-shrink: 0;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--gold);
+            transition: all 0.3s;
+        }
+
+        .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0; right: 0;
+            background: rgba(237, 232, 222, 0.99);
+            border-bottom: 1px solid var(--gold-border);
+            padding: 28px 32px;
+            z-index: 999;
+        }
+
+        .mobile-menu.open { display: block; }
+
+        .mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .mobile-menu a {
+            color: var(--text-2);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.25s;
+        }
+
+        .mobile-menu a:hover { color: var(--gold); }
+
+        /* ========================
+           HERO
+           ======================== */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 125px 24px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ambient glow */
+        #hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 50% at 50% -10%, rgba(201,168,76,0.14) 0%, transparent 65%),
+                radial-gradient(ellipse 40% 35% at 90% 100%, rgba(169,133,95,0.08) 0%, transparent 55%);
+            pointer-events: none;
+        }
+
+        /* top vertical accent */
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 90px;
+            background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 920px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            border: 1px solid var(--gold-border);
+            padding: 8px 26px;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: 24px;
+            margin-bottom: 23px;
+        }
+
+        .hero-logo-img {
+            width: clamp(204px, 39vw, 408px);
+            height: auto;
+            display: block;
+            margin: 10px auto 23px;
+        }
+
+        .hero-headline {
+            font-size: clamp(26px, 3.8vw, 46px);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-1);
+            margin-bottom: 18px;
+        }
+
+        .hero-sub {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(16px, 2vw, 22px);
+            color: var(--gold);
+            margin-bottom: 52px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            position: relative;
+            background: linear-gradient(135deg, #C8A52A 0%, #D9B840 50%, #C8A52A 100%);
+            color: #060606;
+            padding: 20px 60px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.25s, box-shadow 0.25s;
+            box-shadow: 0 0 40px rgba(201,168,76,0.30), 0 4px 16px rgba(21,19,17,0.15);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 50px rgba(201,168,76,0.45), 0 4px 16px rgba(21,19,17,0.15);
+        }
+
+        .section-cta-wrap {
+            text-align: center;
+            margin-top: 52px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 64px;
+            margin-top: 90px;
+            padding-top: 44px;
+            border-top: 1px solid var(--gold-border);
+            flex-wrap: wrap;
+        }
+
+        .stat-num {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .stat-lbl {
+            font-size: 11px;
+            color: var(--text-3);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* ========================
+           SECTION: UNIVERSITY
+           ======================== */
+        #university {
+            background: var(--bg-1);
+            border-top: 1px solid var(--gold-border);
+            border-bottom: 1px solid var(--gold-border);
+        }
+
+        .uni-intro {
+            max-width: 680px;
+            color: var(--text-2);
+            font-size: 17px;
+            line-height: 1.75;
+            margin-top: 16px;
+        }
+
+        .uni-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            margin-top: 60px;
+        }
+
+        .uni-card {
+            background: var(--bg-card);
+            padding: 52px 42px;
+            position: relative;
+            border: 1px solid transparent;
+            overflow: hidden;
+            transition: background 0.35s, border-color 0.35s;
+        }
+
+        .uni-card:hover {
+            background: var(--bg-card-h);
+            border-color: var(--gold-border);
+        }
+
+        .uni-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0;
+            transition: opacity 0.35s;
+        }
+
+        .uni-card:hover::before { opacity: 1; }
+
+        .uni-num {
+            font-family: 'Cinzel', serif;
+            font-size: 80px;
+            font-weight: 900;
+            color: rgba(21,19,17,0.07);
+            position: absolute;
+            top: 14px; right: 24px;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .uni-icon {
+            font-size: 46px;
+            display: block;
+            margin-bottom: 22px;
+        }
+
+        .uni-title {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+
+        .uni-text {
+            color: var(--text-2);
+            font-size: 14.5px;
+            line-height: 1.75;
+        }
+
+        /* ========================
+           SECTION: FOR WHOM
+           ======================== */
+        #for-whom { background: var(--bg-0); }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 60px;
+        }
+
+        .pain-card {
+            background: var(--bg-card);
+            border: 1px solid var(--gold-border);
+            padding: 42px 36px;
+            transition: transform 0.35s, box-shadow 0.35s;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 64px rgba(201,168,76,0.10);
+        }
+
+        .pain-icon-box {
+            width: 58px;
+            height: 58px;
+            border: 1px solid var(--gold-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 24px;
+        }
+
+        .pain-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+
+        .pain-text {
+            color: var(--text-2);
+            font-size: 14.5px;
+            line-height: 1.75;
+        }
+
+        /* ========================
+           SECTION: CURRICULUM
+           ======================== */
+        #curriculum {
+            background: var(--bg-1);
+            border-top: 1px solid var(--gold-border);
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-top: 60px;
+        }
+
+        .module-card {
+            background: var(--bg-card);
+            border: 1px solid var(--gold-border);
+            padding: 42px;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.35s, transform 0.35s, box-shadow 0.35s;
+        }
+
+        .module-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .module-card:hover {
+            background: var(--bg-card-h);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(201,168,76,0.09);
+        }
+
+        .module-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 12px;
+            color: var(--gold);
+            letter-spacing: 4px;
+            margin-bottom: 14px;
+        }
+
+        .module-icon {
+            font-size: 34px;
+            display: block;
+            margin-bottom: 18px;
+        }
+
+        .module-title {
+            font-size: 21px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: var(--text-1);
+        }
+
+        .module-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .module-list li {
+            color: var(--text-2);
+            font-size: 14px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .module-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        /* ========================
+           SECTION: AUTHOR
+           ======================== */
+        #author {
+            background: var(--bg-0);
+            border-top: 1px solid var(--gold-border);
+        }
+
+        .author-grid {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .author-photo-wrap {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .author-frame {
+            border: 1px solid var(--gold-border);
+            padding: 5px;
+            position: relative;
+        }
+
+        .author-frame::before {
+            content: '';
+            position: absolute;
+            top: 18px; left: 18px;
+            right: -18px; bottom: -18px;
+            border: 1px solid rgba(201,168,76,0.15);
+            z-index: -1;
+        }
+
+        .author-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(160deg, #DDD6C8, #C8BFB0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
+        }
+        .author-photo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: inherit;
+            display: block;
+        }
+
+        .author-stamp {
+            position: absolute;
+            bottom: -18px; right: -18px;
+            background: var(--gold);
+            color: #151311;
+            padding: 16px 22px;
+            font-family: 'Cinzel', serif;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .author-name {
+            font-size: clamp(30px, 4vw, 48px);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .author-role {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 18px;
+            color: var(--gold);
+            margin-bottom: 28px;
+        }
+
+        .author-bio {
+            color: var(--text-2);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 38px;
+        }
+
+        .credentials {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .cred {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border-left: 2px solid var(--gold);
+        }
+
+        .cred-icon { font-size: 20px; flex-shrink: 0; }
+
+        .cred-main {
+            color: var(--text-1);
+            font-size: 14px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .cred-sub {
+            color: var(--text-2);
+            font-size: 13px;
+        }
+
+        /* ========================
+           SECTION: RESULTS
+           ======================== */
+        #results {
+            background: var(--bg-1);
+            border-top: 1px solid var(--gold-border);
+            border-bottom: 1px solid var(--gold-border);
+            text-align: center;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 60px;
+        }
+
+        .result-card {
+            background: var(--bg-card);
+            border: 1px solid var(--gold-border);
+            padding: 42px 34px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.35s, box-shadow 0.35s;
+        }
+
+        .result-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 70px rgba(201,168,76,0.14);
+        }
+
+        .result-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 14px; left: 22px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 72px;
+            color: rgba(21,19,17,0.10);
+            line-height: 1;
+        }
+
+        .result-num {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(34px, 4vw, 50px);
+            font-weight: 900;
+            background: linear-gradient(135deg, #C8A52A, #D9B840);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .result-period {
+            font-size: 11px;
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .result-quote {
+            color: var(--text-2);
+            font-size: 14.5px;
+            line-height: 1.75;
+            margin-bottom: 20px;
+        }
+
+        .result-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 15px;
+            color: var(--text-1);
+        }
+
+        /* ========================
+           SECTION: PRICING
+           ======================== */
+        #pricing {
+            background: var(--bg-0);
+            text-align: center;
+        }
+
+        .pricing-wrap {
+            max-width: 680px;
+            margin: 60px auto 0;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--gold);
+            padding: 64px 60px;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        /* top gold bar */
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #9A7B1C, #E8CC50, #9A7B1C);
+        }
+
+        /* corner ornament */
+        .pricing-card::after {
+            content: '✦';
+            position: absolute;
+            bottom: 22px; right: 26px;
+            font-size: 18px;
+            color: rgba(201,168,76,0.15);
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: #151311;
+            padding: 6px 20px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
+
+        .pricing-plan-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 15px;
+            color: var(--text-2);
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .pricing-amount {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(54px, 8vw, 82px);
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(135deg, #C8A52A 0%, #D9B840 50%, #C8A52A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .pricing-period {
+            color: var(--text-2);
+            font-size: 15px;
+            margin-bottom: 42px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 48px;
+        }
+
+        .pricing-features li {
+            color: var(--text-2);
+            font-size: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .pricing-features li::before {
+            content: '✦';
+            color: var(--gold);
+            font-size: 9px;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        .pricing-divider {
+            border: none;
+            border-top: 1px solid var(--gold-border);
+            margin: 44px 0;
+        }
+
+        .form-hint {
+            color: var(--text-2);
+            font-size: 14px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .f-input {
+            width: 100%;
+            background: var(--bg-0);
+            border: 1px solid var(--gold-border);
+            color: var(--text-1);
+            padding: 18px 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.25s;
+            -webkit-appearance: none;
+        }
+
+        .f-input::placeholder { color: var(--sand); }
+        .f-input:focus { border-color: var(--gold); }
+
+        /* autofill override */
+        .f-input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 100px var(--bg-0) inset;
+            -webkit-text-fill-color: var(--text-1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #C8A52A 0%, #D9B840 50%, #C8A52A 100%);
+            color: #060606;
+            border: none;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.25s, box-shadow 0.25s;
+            box-shadow: 0 4px 30px rgba(201,168,76,0.28);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 50px rgba(201,168,76,0.45);
+        }
+
+        .submit-btn:active { transform: translateY(0); }
+
+        .submit-btn.loading {
+            opacity: 0.7;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .success-msg {
+            display: none;
+            text-align: center;
+            padding: 48px 32px;
+            border: 1px solid var(--gold-border);
+            background: rgba(201,168,76,0.04);
+        }
+
+        .success-msg.show { display: block; }
+
+        .success-icon { font-size: 52px; margin-bottom: 18px; display: block; }
+
+        .success-title {
+            font-family: 'Cinzel', serif;
+            font-size: 26px;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .success-body {
+            color: var(--text-2);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .error-msg {
+            color: #ff6b6b;
+            font-size: 13px;
+            margin-top: 8px;
+            display: none;
+        }
+
+        .error-msg.show { display: block; }
+
+        /* ========================
+           SECTION: FAQ
+           ======================== */
+        #faq {
+            background: var(--bg-1);
+            border-top: 1px solid var(--gold-border);
+            text-align: center;
+        }
+
+        .faq-list {
+            max-width: 780px;
+            margin: 60px auto 0;
+            text-align: left;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gold-border);
+            overflow: hidden;
+        }
+
+        .faq-q {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--text-1);
+            padding: 28px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: color 0.25s;
+        }
+
+        .faq-q:hover { color: var(--gold); }
+        .faq-q.active { color: var(--gold); }
+
+        .faq-toggle {
+            flex-shrink: 0;
+            width: 30px; height: 30px;
+            border: 1px solid var(--gold-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1;
+            transition: transform 0.3s, border-color 0.25s;
+        }
+
+        .faq-q.active .faq-toggle {
+            transform: rotate(45deg);
+            border-color: var(--gold);
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .faq-a.open { max-height: 320px; }
+
+        .faq-a-inner {
+            padding-bottom: 28px;
+            color: var(--text-2);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* ========================
+           FOOTER
+           ======================== */
+        footer {
+            background: var(--bg-0);
+            border-top: 1px solid var(--gold-border);
+            padding: 70px 24px 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .footer-logo-img {
+            height: 134px;
+            width: auto;
+        }
+
+        .footer-tagline {
+            color: var(--text-3);
+            font-size: 13px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 42px;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 36px;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .footer-nav a {
+            color: var(--text-2);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.25s;
+        }
+
+        .footer-nav a:hover { color: var(--gold); }
+
+        .footer-divider {
+            border: none;
+            border-top: 1px solid rgba(201,168,76,0.12);
+            margin-bottom: 28px;
+        }
+
+        .footer-legal {
+            color: var(--text-3);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* ========================
+           SCROLL ANIMATIONS
+           ======================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========================
+           PALETTE ACCENTS
+           ======================== */
+
+        /* Section eyebrows — espresso on light bg for depth */
+        #university .section-eyebrow { color: var(--caramel); }
+        #curriculum .section-eyebrow { color: var(--espresso); }
+        #author .section-eyebrow    { color: var(--caramel); }
+        #results .section-eyebrow   { color: var(--espresso); }
+        #faq .section-eyebrow       { color: var(--caramel); }
+
+        /* Section alt backgrounds */
+        #university {
+            background: var(--bg-1);
+            border-top: 1px solid var(--gold-border);
+            border-bottom: 1px solid var(--gold-border);
+        }
+        #results {
+            background: var(--bg-1);
+            border-top: 1px solid var(--gold-border);
+            border-bottom: 1px solid var(--gold-border);
+        }
+        #faq {
+            background: var(--bg-1);
+            border-top: 1px solid var(--gold-border);
+        }
+        #curriculum {
+            background: var(--bg-0);
+        }
+
+        /* Card base shadow — visible on light bg */
+        .uni-card, .pain-card, .module-card, .result-card {
+            box-shadow: 0 2px 14px rgba(21,19,17,0.06);
+        }
+
+        /* Card hover — dark subtle shadow on light bg */
+        .pain-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(21,19,17,0.12);
+        }
+        .module-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 36px rgba(21,19,17,0.10);
+        }
+        .result-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(21,19,17,0.12);
+        }
+
+        /* Uni card top border on hover — caramel instead of gold */
+        #university .uni-card:hover::before {
+            background: linear-gradient(90deg, transparent, var(--caramel), transparent);
+        }
+
+        /* Curriculum module card bottom rule */
+        #curriculum .module-card::after {
+            background: linear-gradient(90deg, transparent, var(--caramel), transparent);
+        }
+
+        /* Credential accents */
+        .cred:nth-child(even) { border-left-color: var(--caramel); }
+
+        /* Period labels on result cards */
+        .result-period { color: var(--espresso); }
+
+        /* Pricing card top bar */
+        .pricing-card::before {
+            background: linear-gradient(90deg, #9A7B1C, #C8A52A, #E8CC50, #C8A52A, #9A7B1C);
+        }
+
+        /* Gold rule caramel variant */
+        #results .gold-rule,
+        #curriculum .gold-rule {
+            background: linear-gradient(90deg, transparent, var(--caramel), transparent);
+        }
+
+        /* Cormorant sizing */
+        .hero-sub { font-size: clamp(18px, 2.2vw, 26px); }
+        .pricing-plan-label { font-size: 17px; }
+        .result-name { font-size: 17px; }
+
+        /* ========================
+           RESPONSIVE
+           ======================== */
+        @media (max-width: 1100px) {
+            .author-grid { grid-template-columns: 1fr; gap: 60px; }
+            .author-photo-wrap { max-width: 340px; margin: 0 auto; }
+        }
+
+        @media (max-width: 900px) {
+            #navbar { padding: 10px 24px; }
+            .nav-links, .nav-btn { display: none; }
+            .hamburger { display: flex; }
+
+            .uni-grid { grid-template-columns: 1fr; }
+            .pain-grid { grid-template-columns: 1fr; }
+            .modules-grid { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr; }
+
+            section { padding: 70px 20px; }
+
+            .hero-stats { gap: 32px; }
+            .pricing-card { padding: 44px 32px; }
+        }
+
+        @media (max-width: 520px) {
+            .hero-logo { letter-spacing: 5px; }
+            .hero-stats { flex-direction: column; align-items: center; gap: 24px; }
+            .hero-cta { padding: 18px 40px; }
+            .pricing-card { padding: 36px 24px; }
+        }
+
+        /* ========================
+           PRELOADER
+           ======================== */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: radial-gradient(ellipse at 50% 55%, #2C1309 0%, #190B05 50%, #100603 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+        #preloader.pl-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* Floating gold star particles */
+        .pl-star {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: pl-drift linear forwards;
+        }
+        @keyframes pl-drift {
+            0%   { opacity: 0;   transform: translateY(0)     scale(1);    }
+            15%  { opacity: 1;                                              }
+            80%  { opacity: 0.5;                                            }
+            100% { opacity: 0;   transform: translateY(-280px) scale(0.1); }
+        }
+
+        /* Inner wrapper */
+        .pl-inner {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Logo — letter-by-letter */
+        .pl-logo {
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            font-size: clamp(26px, 5.5vw, 66px);
+            letter-spacing: 14px;
+            color: #C8A52A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: pl-glow 2.5s ease-in-out 2.1s infinite alternate;
+        }
+        @keyframes pl-glow {
+            from { text-shadow: 0 0 10px rgba(201,168,76,0.2); }
+            to   { text-shadow: 0 0 28px rgba(201,168,76,0.75), 0 0 60px rgba(201,168,76,0.25); }
+        }
+
+        /* Each letter */
+        .pl-logo span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(22px);
+            animation: pl-letter 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        .pl-logo .pl-sp { width: 0.38em; }
+
+        /* Staggered delays — C B C [sp] A C A D E M Y */
+        .pl-logo span:nth-child(1)  { animation-delay: 0.20s; }
+        .pl-logo span:nth-child(2)  { animation-delay: 0.34s; }
+        .pl-logo span:nth-child(3)  { animation-delay: 0.48s; }
+        .pl-logo span:nth-child(4)  { animation-delay: 0.58s; }
+        .pl-logo span:nth-child(5)  { animation-delay: 0.68s; }
+        .pl-logo span:nth-child(6)  { animation-delay: 0.82s; }
+        .pl-logo span:nth-child(7)  { animation-delay: 0.96s; }
+        .pl-logo span:nth-child(8)  { animation-delay: 1.10s; }
+        .pl-logo span:nth-child(9)  { animation-delay: 1.24s; }
+        .pl-logo span:nth-child(10) { animation-delay: 1.38s; }
+        .pl-logo span:nth-child(11) { animation-delay: 1.52s; }
+
+        @keyframes pl-letter {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Gold divider bar */
+        .pl-bar {
+            margin: 22px auto 0;
+            height: 1px;
+            width: 0;
+            background: linear-gradient(90deg, transparent, #C8A52A, transparent);
+            animation: pl-expand 1s ease 2.1s forwards;
+        }
+        @keyframes pl-expand {
+            to { width: 180px; }
+        }
+
+        /* Italic tagline */
+        .pl-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(10px, 1.6vw, 15px);
+            letter-spacing: 5px;
+            color: rgba(201, 168, 76, 0.5);
+            margin-top: 16px;
+            opacity: 0;
+            animation: pl-fade 1s ease 2.2s forwards;
+        }
+        @keyframes pl-fade {
+            to { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ===== PRELOADER ===== -->
+    <div id="preloader">
+        <div class="pl-inner">
+            <div class="pl-logo" aria-label="CBC ACADEMY">
+                <span>C</span><span>B</span><span>C</span><span class="pl-sp">&nbsp;</span><span>A</span><span>C</span><span>A</span><span>D</span><span>E</span><span>M</span><span>Y</span>
+            </div>
+            <div class="pl-bar"></div>
+            <div class="pl-tagline">Элитное образование в SMM</div>
+        </div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="navbar">
+        <a href="#hero" class="nav-logo" aria-label="CBC Academy">
+            <img src="newlogo.png" alt="CBC Academy" class="nav-logo-img">
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#university">Академия</a></li>
+            <li><a href="#curriculum">Программа</a></li>
+            <li><a href="#author">Декан</a></li>
+            <li><a href="#results">Результаты</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+
+        <a href="#pricing" class="nav-btn">Записаться</a>
+
+        <div class="hamburger" id="hamburger" aria-label="Меню" role="button" tabindex="0">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#university" onclick="closeMob()">Академия</a></li>
+            <li><a href="#curriculum" onclick="closeMob()">Программа</a></li>
+            <li><a href="#author" onclick="closeMob()">Декан</a></li>
+            <li><a href="#results" onclick="closeMob()">Результаты</a></li>
+            <li><a href="#pricing" onclick="closeMob()">Записаться</a></li>
+            <li><a href="#faq" onclick="closeMob()">FAQ</a></li>
+        </ul>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero">
+        <div class="hero-inner">
+            <div class="hero-tag">Элитная онлайн-школа SMM · Запуск Скоро</div>
+            <img src="newlogo.png" alt="CBC Academy" class="hero-logo-img">
+            <h1 class="hero-headline">
+                Стань СММ-специалистом<br>и <span style="color:var(--gold)">зарабатывай</span> из дома
+            </h1>
+            <p class="hero-sub">Ранняя запись открыта — зафиксируй цену подписки</p>
+            <a href="#pricing" class="hero-cta">Присоединиться к академии</a>
+
+            <div class="hero-stats">
+                <div>
+                    <span class="stat-num">500+</span>
+                    <span class="stat-lbl">Выпускников</span>
+                </div>
+                <div>
+                    <span class="stat-num">4</span>
+                    <span class="stat-lbl">Модуля</span>
+                </div>
+                <div>
+                    <span class="stat-num">150к ₽</span>
+                    <span class="stat-lbl">Средний доход</span>
+                </div>
+                <div>
+                    <span class="stat-num">7</span>
+                    <span class="stat-lbl">Лет опыта</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== UNIVERSITY WORLD ===== -->
+    <section id="university">
+        <div class="container">
+            <span class="section-eyebrow">Наш кампус</span>
+            <h2 class="section-title">
+                Мир элитного<br><span class="gold-text">образования</span>
+            </h2>
+            <p class="uni-intro">
+                CBC Academy — это не просто онлайн-курс. Это полноценный университетский опыт,
+                где каждый студент становится частью избранного сообщества профессионалов.
+                Мы создали учебный кампус, который вдохновляет и меняет жизнь.
+            </p>
+
+            <div class="uni-grid">
+                <div class="uni-card reveal">
+                    <span class="uni-num">01</span>
+                    <span class="uni-icon">🎓</span>
+                    <div class="uni-title">Диплом выпускника</div>
+                    <p class="uni-text">
+                        После окончания программы каждый студент получает официальный диплом
+                        CBC Academy, подтверждающий квалификацию SMM-специалиста. Ваш выпускной —
+                        событие, которое открывает двери в мир высокооплачиваемой работы.
+                        Мы отмечаем успех каждого.
+                    </p>
+                </div>
+                <div class="uni-card reveal">
+                    <span class="uni-num">02</span>
+                    <span class="uni-icon">🏛️</span>
+                    <div class="uni-title">Закрытый кампус</div>
+                    <p class="uni-text">
+                        Наш цифровой кампус — это закрытое сообщество студентов и преподавателей.
+                        Живые занятия, групповые разборы, личная поддержка декана Камиллы.
+                        Атмосфера настоящего университета, где каждого знают по имени и
+                        каждый успех — повод для гордости.
+                    </p>
+                </div>
+                <div class="uni-card reveal">
+                    <span class="uni-num">03</span>
+                    <span class="uni-icon">👑</span>
+                    <div class="uni-title">Сеть выпускников</div>
+                    <p class="uni-text">
+                        Более 500 выпускников CBC Academy работают в лучших компаниях России
+                        и СНГ, ведут собственные агентства. Присоединяйтесь к элитному
+                        сообществу, где помогают друг другу, рекомендуют клиентов и
+                        создают партнёрства.
+                    </p>
+                </div>
+            </div>
+            <div class="section-cta-wrap"><a href="#pricing" class="hero-cta">Присоединиться к академии</a></div>
+        </div>
+    </section>
+
+    <!-- ===== WHO IT'S FOR ===== -->
+    <section id="for-whom">
+        <div class="container" style="text-align: center;">
+            <span class="section-eyebrow">Для кого</span>
+            <h2 class="section-title">Узнаёте себя?</h2>
+            <div class="gold-rule"></div>
+
+            <div class="pain-grid">
+                <div class="pain-card reveal">
+                    <div class="pain-icon-box">💸</div>
+                    <div class="pain-title">«Хочу свои деньги»</div>
+                    <p class="pain-text">
+                        Вы устали зависеть от чужих финансов. Хотите иметь собственный доход,
+                        чувствовать независимость и уверенность в завтрашнем дне — без
+                        просьб и объяснений, куда ушли деньги. Вы заслуживаете финансовой свободы.
+                    </p>
+                </div>
+                <div class="pain-card reveal">
+                    <div class="pain-icon-box">🏠</div>
+                    <div class="pain-title">«Работа рядом с детьми»</div>
+                    <p class="pain-text">
+                        Дети, семья, быт — и при этом вы мечтаете зарабатывать. SMM идеально
+                        подходит: работайте в свободные часы, не выходя из дома и не жертвуя
+                        драгоценным временем с теми, кто вам дорог.
+                    </p>
+                </div>
+                <div class="pain-card reveal">
+                    <div class="pain-icon-box">🚀</div>
+                    <div class="pain-title">«Нет опыта — страшно начать»</div>
+                    <p class="pain-text">
+                        Вы думаете, что для этого нужны специальные знания или образование —
+                        это миф. Наши выпускники начинали абсолютно с нуля и уже через
+                        60 дней зарабатывали от 50 000₽ в месяц.
+                    </p>
+                </div>
+            </div>
+            <div class="section-cta-wrap"><a href="#pricing" class="hero-cta">Присоединиться к академии</a></div>
+        </div>
+    </section>
+
+    <!-- ===== CURRICULUM ===== -->
+    <section id="curriculum">
+        <div class="container" style="text-align: center;">
+            <span class="section-eyebrow">Программа обучения</span>
+            <h2 class="section-title">Что вы освоите</h2>
+            <div class="gold-rule"></div>
+
+            <div class="modules-grid">
+                <div class="module-card reveal">
+                    <div class="module-num">Модуль I</div>
+                    <span class="module-icon">📱</span>
+                    <div class="module-title">Основы SMM и Instagram</div>
+                    <ul class="module-list">
+                        <li>Как работают алгоритмы соцсетей в 2024 году</li>
+                        <li>Профессиональная упаковка профиля клиента</li>
+                        <li>Контент-стратегия с нуля за 3 часа</li>
+                        <li>Органический рост: первые 1000 подписчиков</li>
+                    </ul>
+                </div>
+                <div class="module-card reveal">
+                    <div class="module-num">Модуль II</div>
+                    <span class="module-icon">✍️</span>
+                    <div class="module-title">Контент и копирайтинг</div>
+                    <ul class="module-list">
+                        <li>Продающие тексты без воды и шаблонов</li>
+                        <li>Сторис, Reels и карусели, которые вирусятся</li>
+                        <li>Дизайн в Canva: профессиональный уровень</li>
+                        <li>Контент-план на месяц за 2 часа</li>
+                    </ul>
+                </div>
+                <div class="module-card reveal">
+                    <div class="module-num">Модуль III</div>
+                    <span class="module-icon">🎯</span>
+                    <div class="module-title">Таргет и реклама</div>
+                    <ul class="module-list">
+                        <li>Настройка рекламного кабинета с нуля</li>
+                        <li>Точный портрет целевой аудитории</li>
+                        <li>Рабочие связки на бюджете от 500₽/день</li>
+                        <li>Аналитика, А/Б тесты и масштабирование</li>
+                    </ul>
+                </div>
+                <div class="module-card reveal">
+                    <div class="module-num">Модуль IV</div>
+                    <span class="module-icon">💼</span>
+                    <div class="module-title">Работа с клиентами</div>
+                    <ul class="module-list">
+                        <li>Где и как найти первых платящих клиентов</li>
+                        <li>Договор, цены и переговоры без страха</li>
+                        <li>Отчётность, коммуникация, удержание клиента</li>
+                        <li>Масштабирование: своя команда и агентство</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section-cta-wrap"><a href="#pricing" class="hero-cta">Присоединиться к академии</a></div>
+        </div>
+    </section>
+
+    <!-- ===== AUTHOR ===== -->
+    <section id="author">
+        <div class="container">
+            <div class="author-grid">
+                <div class="author-photo-wrap reveal">
+                    <div class="author-frame">
+                        <img src="camipic_nobg.png" alt="Камилла" class="author-photo-img">
+                    </div>
+                    <div class="author-stamp">
+                        Декан академии<br>с 2019 года
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <span class="section-eyebrow">Ваш наставник</span>
+                    <h2 class="author-name">Камилла</h2>
+                    <div class="author-role">Декан CBC Academy</div>
+                    <p class="author-bio">
+                        За 7 лет в digital-маркетинге Камилла вырастила более 500 SMM-специалистов
+                        с абсолютного нуля. Её студенты работают с брендами уровня premium и luxury,
+                        зарабатывают от 100 000₽ в месяц и живут так, как всегда мечтали.
+                        Камилла убеждена: каждая женщина заслуживает финансовой независимости.
+                    </p>
+
+                    <div class="credentials">
+                        <div class="cred">
+                            <span class="cred-icon">🏆</span>
+                            <div>
+                                <span class="cred-main">Топ-10 SMM-специалистов России</span>
+                                <span class="cred-sub">Рейтинг Digital-агентств, 2023</span>
+                            </div>
+                        </div>
+                        <div class="cred">
+                            <span class="cred-icon">📊</span>
+                            <div>
+                                <span class="cred-main">500+ выпускников</span>
+                                <span class="cred-sub">Работают в России, Европе и ОАЭ</span>
+                            </div>
+                        </div>
+                        <div class="cred">
+                            <span class="cred-icon">💰</span>
+                            <div>
+                                <span class="cred-main">Личный оборот 2 млн ₽/мес</span>
+                                <span class="cred-sub">Через агентство и преподавание</span>
+                            </div>
+                        </div>
+                        <div class="cred">
+                            <span class="cred-icon">🎓</span>
+                            <div>
+                                <span class="cred-main">МГУ, факультет журналистики</span>
+                                <span class="cred-sub">+ Сертификат Meta Business Partner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta-wrap"><a href="#pricing" class="hero-cta">Присоединиться к академии</a></div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section id="pricing">
+        <div class="container">
+            <span class="section-eyebrow">Раннее бронирование</span>
+            <h2 class="section-title">Зафиксируй цену<br>подписки</h2>
+            <div class="gold-rule"></div>
+
+            <div class="pricing-wrap">
+                <div class="pricing-card reveal">
+                    <div class="pricing-badge">Ранняя цена · Ежемесячная подписка</div>
+                    <div class="pricing-plan-label">Предзапись на курс</div>
+                    <span class="pricing-amount">9 900 ₽</span>
+                    <div class="pricing-period">в месяц · скидка 40% для ранних участников</div>
+
+                    <ul class="pricing-features">
+                        <li>Полный доступ ко всем 4 модулям программы</li>
+                        <li>Персональная консультация с деканом Камиллой</li>
+                        <li>Закрытый чат студентов CBC Academy 24/7</li>
+                        <li>Детальный разбор вашего аккаунта и стратегии</li>
+                        <li>Диплом выпускника по завершении программы</li>
+                        <li>Поддержка в поиске первых клиентов</li>
+                        <li>Доступ к базе знаний и обновлениям навсегда</li>
+                        <li>🔒 Цена зафиксирована — больше не повысится</li>
+                    </ul>
+
+                    <hr class="pricing-divider">
+
+                    <!-- Signup form -->
+                    <div id="formWrap">
+                        <p class="form-hint">
+                            Оставь имя и email — мы сообщим о дате старта и зафиксируем твою цену раннего доступа
+                        </p>
+                        <form class="signup-form" id="signupForm" onsubmit="handleSignup(event)" novalidate>
+                            <div>
+                                <input
+                                    type="text"
+                                    class="f-input"
+                                    id="f-name"
+                                    placeholder="Ваше имя"
+                                    autocomplete="given-name"
+                                    required
+                                >
+                            </div>
+                            <div>
+                                <input
+                                    type="email"
+                                    class="f-input"
+                                    id="f-email"
+                                    placeholder="Ваш email"
+                                    autocomplete="email"
+                                    required
+                                >
+                            </div>
+                            <div class="error-msg" id="formError">Пожалуйста, заполните все поля корректно</div>
+                            <button type="submit" class="submit-btn" id="submitBtn">
+                                Присоединиться к академии
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Success state -->
+                    <div class="success-msg" id="successMsg">
+                        <span class="success-icon">🎓</span>
+                        <div class="success-title">Ты в списке ранних участников!</div>
+                        <p class="success-body">
+                            Твоё место зарезервировано.<br>
+                            Камилла лично свяжется с тобой перед стартом.<br>
+                            Жди письмо на email — детали уже в пути.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq">
+        <div class="container">
+            <span class="section-eyebrow">Вопросы и ответы</span>
+            <h2 class="section-title">Часто спрашивают</h2>
+            <div class="gold-rule"></div>
+
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)" type="button">
+                        Нужен ли опыт в маркетинге или дизайне?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">
+                            Абсолютно нет. CBC Academy создана специально для начинающих — мы стартуем
+                            с самых основ и ведём вас шаг за шагом. Большинство выпускников пришли без
+                            какого-либо опыта в digital. Всё, что нужно — желание учиться и смартфон.
+                            Уже через месяц вы будете знать больше, чем 90% самоучек в интернете.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)" type="button">
+                        Сколько времени нужно уделять учёбе каждый день?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">
+                            От 1 до 2 часов в день — этого более чем достаточно. Программа построена так,
+                            чтобы её можно было органично совмещать с домашними делами и уходом за детьми.
+                            Все материалы доступны 24/7, а значит вы учитесь в своём ритме — утром,
+                            во время дневного сна ребёнка или вечером после ужина.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)" type="button">
+                        Когда я смогу найти первых клиентов?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">
+                            Студенты программы находят первых клиентов уже во время обучения — после первого или второго модуля. Мы помогаем с портфолио, скриптами переговоров и конкретной стратегией поиска. 87% выпускников получили оплаченные проекты в течение первых 60 дней после старта обучения.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)" type="button">
+                        Есть ли поддержка после окончания курса?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-a">
+                        <div class="faq-a-inner">
+                            Да! Выпускники CBC Academy получают постоянный доступ к закрытому чату
+                            сообщества, где можно задать вопрос, найти партнёра или получить рекомендацию
+                            клиента. Декан Камилла проводит ежемесячные Q&A-сессии для всех выпускников.
+                            Вы в семье навсегда.
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="newlogo.png" alt="CBC Academy" class="footer-logo-img">
+            </div>
+            <div class="footer-tagline">Элитное образование в SMM · С нуля до профессионала</div>
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="#university">Академия</a>
+                <a href="#curriculum">Программа</a>
+                <a href="#author">Декан</a>
+                <a href="#results">Результаты</a>
+                <a href="#pricing">Записаться</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+
+            <hr class="footer-divider">
+            <p class="footer-legal">
+                © 2026 CBC Academy. Все права защищены.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+    /* ========================================
+       NAVIGATION — SCROLL SHRINK + HAMBURGER
+       ======================================== */
+    const navbar   = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY > 60;
+        const isMob = window.innerWidth <= 900;
+        navbar.style.padding = scrolled ? `6px ${isMob ? '24px' : '48px'}` : `10px ${isMob ? '24px' : '48px'}`;
+    }, { passive: true });
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+    });
+
+    function closeMob() {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+    }
+
+    /* ========================================
+       FAQ ACCORDION
+       ======================================== */
+    function toggleFaq(btn) {
+        const answer  = btn.nextElementSibling;
+        const isOpen  = btn.classList.contains('active');
+
+        // close all
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.classList.remove('active');
+            q.nextElementSibling.classList.remove('open');
+        });
+
+        // open this one if it was closed
+        if (!isOpen) {
+            btn.classList.add('active');
+            answer.classList.add('open');
+        }
+    }
+
+    /* ========================================
+       SCROLL REVEAL
+       ======================================== */
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                // stagger siblings
+                const siblings = [...entry.target.parentElement.children];
+                const idx = siblings.indexOf(entry.target);
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, idx * 120);
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    /* ========================================
+       FORM SUBMISSION + SQLITE SAVE
+       ======================================== */
+    async function handleSignup(e) {
+        e.preventDefault();
+
+        const nameVal  = document.getElementById('f-name').value.trim();
+        const emailVal = document.getElementById('f-email').value.trim();
+        const errEl    = document.getElementById('formError');
+        const btn      = document.getElementById('submitBtn');
+
+        // Basic validation
+        const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!nameVal || !emailRx.test(emailVal)) {
+            errEl.classList.add('show');
+            return;
+        }
+        errEl.classList.remove('show');
+
+        // Loading state
+        btn.classList.add('loading');
+        btn.textContent = 'Отправляем...';
+
+        const payload = { name: nameVal, email: emailVal };
+
+        try {
+            // Try to POST to the companion server (SQLite backend)
+            const res = await fetch('/api/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+                signal: AbortSignal.timeout(5000)
+            });
+
+            if (!res.ok) throw new Error('Server error');
+            console.log('[CBC Academy] Signup saved to SQLite:', payload);
+
+        } catch (err) {
+            // Fallback: save to localStorage if server isn't running
+            const stored = JSON.parse(localStorage.getItem('cbc_signups') || '[]');
+            stored.push({ ...payload, ts: new Date().toISOString(), id: Date.now() });
+            localStorage.setItem('cbc_signups', JSON.stringify(stored));
+            console.log('[CBC Academy] Signup saved to localStorage (server offline):', payload);
+        }
+
+        // Show success regardless
+        document.getElementById('formWrap').style.display = 'none';
+        document.getElementById('successMsg').classList.add('show');
+    }
+
+    /* ========================================
+       SMOOTH NAVBAR MOBILE COLLAPSE ON LINK
+       ======================================== */
+    document.querySelectorAll('.nav-links a, .nav-btn').forEach(a => {
+        a.addEventListener('click', closeMob);
+    });
+
+    /* ===== PRELOADER ===== */
+    (function () {
+        const pre = document.getElementById('preloader');
+        if (!pre) return;
+        document.body.style.overflow = 'hidden';
+
+        // Spawn floating gold star particles
+        const goldShades = ['#C8A52A', '#D4B96A', '#D9B840', '#F0DA90', '#BFA040'];
+        for (let i = 0; i < 42; i++) {
+            const s = document.createElement('div');
+            s.className = 'pl-star';
+            const sz  = Math.random() * 3.2 + 0.7;
+            const col = goldShades[Math.floor(Math.random() * goldShades.length)];
+            s.style.cssText = [
+                'width:'              + sz                          + 'px',
+                'height:'             + sz                          + 'px',
+                'background:'         + col,
+                'box-shadow:0 0 '     + (sz * 3.5) + 'px ' + sz    + 'px rgba(201,168,76,0.55)',
+                'left:'               + (Math.random() * 100)       + '%',
+                'bottom:'             + (Math.random() * 70)        + '%',
+                'animation-duration:' + (Math.random() * 2.8 + 1.6) + 's',
+                'animation-delay:'    + (Math.random() * 3.2)       + 's'
+            ].join(';');
+            pre.appendChild(s);
+        }
+
+        const dismiss = () => {
+            pre.classList.add('pl-hidden');
+            document.body.style.overflow = '';
+            setTimeout(() => pre.remove(), 1100);
+        };
+
+        window.addEventListener('load', () => setTimeout(dismiss, 4600));
+        setTimeout(dismiss, 8000); // safety net
+    })();
+    </script>
+
+</body>
+</html>
