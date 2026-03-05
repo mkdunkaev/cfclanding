@@ -7,7 +7,7 @@
     <meta name="description" content="CBC Academy — элитная онлайн-школа SMM. Стань СММ-специалистом и зарабатывай из дома. Набор открыт.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* ========================
            RESET & ROOT
@@ -20,11 +20,11 @@
 
         :root {
             /* Gold */
-            --gold:        #C8A52A;
-            --gold-light:  #D9B840;
-            --gold-dark:   #9A7B1C;
-            --gold-muted:  rgba(200, 165, 42, 0.18);
-            --gold-border: rgba(200, 165, 42, 0.45);
+            --gold:        #D4AF37;
+            --gold-light:  #E5C845;
+            --gold-dark:   #A0891F;
+            --gold-muted:  rgba(212, 175, 55, 0.18);
+            --gold-border: rgba(212, 175, 55, 0.45);
 
             /* Palette from references */
             --cream:       #DAD6CD;   /* Ivory Lace */
@@ -56,7 +56,7 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4 { font-family: 'Cinzel', serif; letter-spacing: 0.04em; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 300; letter-spacing: 0.06em; }
 
         section { padding: 110px 24px; }
 
@@ -71,7 +71,7 @@
         .gold { color: var(--gold); }
 
         .gold-text {
-            background: linear-gradient(135deg, #9A7B1C 0%, #D9B840 45%, #C8A52A 60%, #E8CC50 100%);
+            background: linear-gradient(135deg, #A0891F 0%, #E5C845 45%, #D4AF37 60%, #EDD355 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -89,8 +89,8 @@
         }
 
         .section-title {
-            font-size: clamp(30px, 4.5vw, 52px);
-            font-weight: 700;
+            font-size: clamp(36px, 5.4vw, 62px);
+            font-weight: 300;
             line-height: 1.15;
             margin-bottom: 18px;
         }
@@ -138,10 +138,27 @@
             transition: opacity 0.3s;
         }
         .nav-logo:hover { opacity: 0.8; }
-        .nav-logo-img {
-            height: 74px;
-            width: auto;
+        .nav-logo-text {
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            text-align: center;
             display: block;
+            line-height: 1;
+        }
+        .nav-logo-cbc {
+            display: block;
+            font-size: 34px;
+            letter-spacing: 10px;
+            color: var(--gold);
+            padding-right: 10px; /* optical offset for letter-spacing */
+        }
+        .nav-logo-acad {
+            display: block;
+            font-size: 13px;
+            letter-spacing: 6px;
+            color: var(--gold);
+            margin-top: 5px;
+            padding-right: 6px;
         }
 
         .nav-links {
@@ -288,16 +305,23 @@
             margin-bottom: 23px;
         }
 
-        .hero-logo-img {
-            width: clamp(204px, 39vw, 408px);
-            height: auto;
+        .hero-logo-text {
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            font-size: clamp(41px, 8.4vw, 101px);
+            letter-spacing: 14px;
+            color: var(--gold);
+            text-align: center;
             display: block;
+            white-space: nowrap;
             margin: 10px auto 23px;
+            padding-right: 14px; /* optical offset for letter-spacing */
+            animation: pl-glow 2.5s ease-in-out 1s infinite alternate;
         }
 
         .hero-headline {
-            font-size: clamp(26px, 3.8vw, 46px);
-            font-weight: 700;
+            font-size: clamp(31px, 4.6vw, 55px);
+            font-weight: 300;
             line-height: 1.2;
             color: var(--text-1);
             margin-bottom: 18px;
@@ -1067,9 +1091,14 @@
             justify-content: center;
             margin-bottom: 20px;
         }
-        .footer-logo-img {
-            height: 134px;
-            width: auto;
+        .footer-logo-text {
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            font-size: 29px;
+            letter-spacing: 12px;
+            color: var(--gold);
+            display: block;
+            padding-right: 12px; /* optical offset */
         }
 
         .footer-tagline {
@@ -1365,7 +1394,10 @@
     <!-- ===== NAVIGATION ===== -->
     <nav id="navbar">
         <a href="#hero" class="nav-logo" aria-label="CBC Academy">
-            <img src="newlogo.png" alt="CBC Academy" class="nav-logo-img">
+            <div class="nav-logo-text">
+                <span class="nav-logo-cbc">CBC</span>
+                <span class="nav-logo-acad">ACADEMY</span>
+            </div>
         </a>
 
         <ul class="nav-links">
@@ -1399,7 +1431,7 @@
     <section id="hero">
         <div class="hero-inner">
             <div class="hero-tag">Элитная онлайн-школа SMM · Запуск Скоро</div>
-            <img src="newlogo.png" alt="CBC Academy" class="hero-logo-img">
+            <div class="hero-logo-text">CBC&nbsp;ACADEMY</div>
             <h1 class="hero-headline">
                 Стань СММ-специалистом<br>и <span style="color:var(--gold)">зарабатывай</span> из дома
             </h1>
@@ -1582,7 +1614,7 @@
             <div class="author-grid">
                 <div class="author-photo-wrap reveal">
                     <div class="author-frame">
-                        <img src="camipic_nobg.png" alt="Камилла" class="author-photo-img">
+                        <img src="newnewcamipic_nobg.png" alt="Камилла" class="author-photo-img">
                     </div>
                     <div class="author-stamp">
                         Декан академии<br>с 2019 года
@@ -1786,7 +1818,7 @@
     <footer>
         <div class="container">
             <div class="footer-logo">
-                <img src="newlogo.png" alt="CBC Academy" class="footer-logo-img">
+                <span class="footer-logo-text">CBC&nbsp;ACADEMY</span>
             </div>
             <div class="footer-tagline">Элитное образование в SMM · С нуля до профессионала</div>
 
