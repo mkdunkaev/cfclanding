@@ -1,0 +1,10 @@
+node_modules/
+signups.db
+*.jpeg
+*.jpg
+color*.jpeg
+font.jpeg
+style.jpeg
+currentlogo.jpeg
+desiredfont.jpeg
+.claude/
