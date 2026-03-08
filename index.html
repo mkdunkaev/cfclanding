@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBC Academy — Онлайн-школа SMM</title>
-    <meta name="description" content="CBC Academy — элитная онлайн-школа SMM. Стань СММ-специалистом и зарабатывай из дома. Набор открыт.">
+    <title>Cami Freedom Club</title>
+    <meta name="description" content="Cami Freedom Club — это не курс. Это стиль жизни. Закрытый клуб с Камиллой.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Gilda+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* ========================
            RESET & ROOT
@@ -19,64 +19,40 @@
         }
 
         :root {
-            /* Gold */
-            --gold:        #D4AF37;
-            --gold-light:  #E5C845;
-            --gold-dark:   #A0891F;
-            --gold-muted:  rgba(212, 175, 55, 0.18);
-            --gold-border: rgba(212, 175, 55, 0.45);
-
-            /* Palette from references */
-            --cream:       #DAD6CD;   /* Ivory Lace */
-            --sand:        #A39A8D;   /* Velvet Sandstone */
-            --caramel:     #A9855F;   /* Gilded Caramel */
-            --espresso:    #635549;   /* Espresso Suede */
-            --noir:        #151311;   /* Eclipse Noir */
-
-            /* Beige light backgrounds */
-            --bg-0:    #EDE8DE;   /* main — warm ivory */
-            --bg-1:    #E3DCCE;   /* alt section — deeper warm beige */
-            --bg-2:    #D8D0C0;   /* deepest */
-            --bg-card: #F5F1E8;   /* cards — near-white cream */
-            --bg-card-h: #FAF7F0; /* card hover */
-
-            /* Dark text on beige */
-            --text-1: #151311;   /* Eclipse Noir */
-            --text-2: #4A4038;   /* dark warm medium */
-            --text-3: #7A6E63;   /* muted warm */
+            --gold:        #d4af37;
+            --gold-border: rgba(212, 175, 55, 0.35);
+            --gold-muted:  rgba(212, 175, 55, 0.12);
+            --black:       #000000;
+            --white:       #FFFFFF;
+            --off-white:   #F5F5F5;
         }
 
         html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--bg-0);
-            color: var(--text-1);
+            background: var(--white);
+            color: var(--black);
             overflow-x: hidden;
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 300; letter-spacing: 0.06em; }
-
-        section { padding: 110px 24px; }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        h1, h2, h3, h4 {
+            font-family: 'Gilda Display', serif;
+            font-weight: 400;
+            letter-spacing: 0.08em;
         }
+
+        section { padding: 120px 24px; }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .section-dark { background: var(--off-white); color: var(--black); }
+        .section-light { background: var(--white); color: var(--black); }
 
         /* ========================
            UTILITY
            ======================== */
-        .gold { color: var(--gold); }
-
-        .gold-text {
-            background: linear-gradient(135deg, #A0891F 0%, #E5C845 45%, #D4AF37 60%, #EDD355 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
         .section-eyebrow {
             font-family: 'Inter', sans-serif;
             font-size: 11px;
@@ -84,31 +60,55 @@
             letter-spacing: 5px;
             text-transform: uppercase;
             color: var(--gold);
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             display: block;
         }
 
         .section-title {
+            font-family: 'Gilda Display', serif;
             font-size: clamp(36px, 5.4vw, 62px);
-            font-weight: 300;
-            line-height: 1.15;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            line-height: 1.1;
             margin-bottom: 18px;
         }
 
         .gold-rule {
-            width: 60px;
+            width: 40px;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            margin: 22px auto;
+            background: var(--gold);
+            margin: 24px auto;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--gold);
+            color: #000;
+            padding: 20px 64px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-decoration: none;
+            cursor: pointer;
+            transition: opacity 0.25s;
+        }
+        .hero-cta:hover { opacity: 0.82; }
+
+        .section-cta-wrap {
+            text-align: center;
+            margin-top: 72px;
         }
 
         /* ========================
            SCROLLBAR
            ======================== */
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: var(--bg-0); }
-        ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
-        ::selection { background: var(--gold); color: var(--bg-0); }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--off-white); }
+        ::-webkit-scrollbar-thumb { background: var(--gold); }
+        ::selection { background: var(--gold); color: var(--black); }
 
         /* ========================
            NAVIGATION
@@ -117,19 +117,18 @@
             position: fixed;
             inset: 0 0 auto;
             z-index: 1000;
-            padding: 10px 48px;
+            padding: 14px 48px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 40px;
-            background: rgba(237, 232, 222, 0.94);
+            background: rgba(245, 245, 246, 0.96);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--gold-border);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             transition: padding 0.3s;
         }
 
-        /* ---- Nav Logo ---- */
         .nav-logo {
             display: inline-flex;
             align-items: center;
@@ -137,7 +136,8 @@
             flex-shrink: 0;
             transition: opacity 0.3s;
         }
-        .nav-logo:hover { opacity: 0.8; }
+        .nav-logo:hover { opacity: 0.75; }
+
         .nav-logo-text {
             font-family: 'Cinzel', serif;
             font-weight: 400;
@@ -147,18 +147,18 @@
         }
         .nav-logo-cbc {
             display: block;
-            font-size: 34px;
-            letter-spacing: 10px;
-            color: var(--gold);
-            padding-right: 10px; /* optical offset for letter-spacing */
+            font-size: 22px;
+            letter-spacing: 8px;
+            color: #050505;
+            padding-right: 8px;
         }
         .nav-logo-acad {
             display: block;
-            font-size: 13px;
-            letter-spacing: 6px;
-            color: var(--gold);
+            font-size: 8px;
+            letter-spacing: 5px;
+            color: #050505;
             margin-top: 5px;
-            padding-right: 6px;
+            padding-right: 5px;
         }
 
         .nav-links {
@@ -166,16 +166,15 @@
             gap: 36px;
             list-style: none;
         }
-
         .nav-links a {
-            color: var(--text-2);
+            color: rgba(0, 0, 0, 0.6);
             text-decoration: none;
-            font-size: 13px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15px;
             font-weight: 500;
-            letter-spacing: 0.5px;
+            letter-spacing: 1.5px;
             transition: color 0.25s;
         }
-
         .nav-links a:hover { color: var(--gold); }
 
         .nav-btn {
@@ -184,21 +183,17 @@
             color: var(--gold);
             background: transparent;
             padding: 10px 26px;
-            font-family: 'Inter', sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2.5px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 3px;
             text-transform: uppercase;
             text-decoration: none;
             cursor: pointer;
             transition: background 0.25s, color 0.25s;
             white-space: nowrap;
         }
-
-        .nav-btn:hover {
-            background: var(--gold);
-            color: #151311;
-        }
+        .nav-btn:hover { background: var(--gold); color: var(--black); }
 
         .hamburger {
             display: none;
@@ -208,15 +203,13 @@
             padding: 4px;
             flex-shrink: 0;
         }
-
         .hamburger span {
             display: block;
             width: 24px;
             height: 1.5px;
-            background: var(--gold);
+            background: #050505;
             transition: all 0.3s;
         }
-
         .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
         .hamburger.open span:nth-child(2) { opacity: 0; }
         .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
@@ -224,31 +217,27 @@
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 70px;
+            top: 64px;
             left: 0; right: 0;
-            background: rgba(237, 232, 222, 0.99);
-            border-bottom: 1px solid var(--gold-border);
+            background: rgba(245, 245, 246, 0.98);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             padding: 28px 32px;
             z-index: 999;
         }
-
         .mobile-menu.open { display: block; }
-
         .mobile-menu ul {
             list-style: none;
             display: flex;
             flex-direction: column;
             gap: 22px;
         }
-
         .mobile-menu a {
-            color: var(--text-2);
+            color: rgba(0, 0, 0, 0.7);
             text-decoration: none;
             font-size: 16px;
             font-weight: 500;
             transition: color 0.25s;
         }
-
         .mobile-menu a:hover { color: var(--gold); }
 
         /* ========================
@@ -260,416 +249,285 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 125px 24px 60px;
+            padding: 140px 24px 80px;
+            background: url('hero_bg.jpg') center top / cover no-repeat;
             position: relative;
             overflow: hidden;
         }
 
-        /* ambient glow */
+        /* white wash to match PDF's soft silver tone */
         #hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background:
-                radial-gradient(ellipse 70% 50% at 50% -10%, rgba(201,168,76,0.14) 0%, transparent 65%),
-                radial-gradient(ellipse 40% 35% at 90% 100%, rgba(169,133,95,0.08) 0%, transparent 55%);
+            background: rgba(255, 255, 255, 0.52);
             pointer-events: none;
+            z-index: 0;
         }
 
-        /* top vertical accent */
         #hero::after {
             content: '';
             position: absolute;
             top: 0; left: 50%;
             transform: translateX(-50%);
             width: 1px;
-            height: 90px;
-            background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+            height: 80px;
+            background: var(--gold);
+            opacity: 0.5;
+            z-index: 1;
         }
 
         .hero-inner {
             position: relative;
-            z-index: 1;
-            max-width: 920px;
+            z-index: 2;
+            max-width: 1100px;
         }
 
         .hero-tag {
             display: inline-block;
-            border: 1px solid var(--gold-border);
+            border: 1px solid rgba(0, 0, 0, 0.18);
             padding: 8px 26px;
             font-size: 11px;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: var(--gold);
-            margin-top: 24px;
-            margin-bottom: 23px;
+            color: rgba(0, 0, 0, 0.55);
+            margin-bottom: 48px;
         }
 
-        .hero-logo-text {
-            font-family: 'Cinzel', serif;
+        .hero-brand { margin-bottom: 40px; }
+
+        .hero-brand-cami {
+            font-family: 'Gilda Display', serif;
             font-weight: 400;
-            font-size: clamp(41px, 8.4vw, 101px);
-            letter-spacing: 14px;
-            color: var(--gold);
-            text-align: center;
-            display: block;
-            white-space: nowrap;
-            margin: 10px auto 23px;
-            padding-right: 14px; /* optical offset for letter-spacing */
-            animation: pl-glow 2.5s ease-in-out 1s infinite alternate;
+            font-size: clamp(72px, 16vw, 200px);
+            color: #050505;
+            letter-spacing: 0.15em;
+            line-height: 0.85;
+            text-transform: uppercase;
         }
 
-        .hero-headline {
-            font-size: clamp(31px, 4.6vw, 55px);
-            font-weight: 300;
-            line-height: 1.2;
-            color: var(--text-1);
-            margin-bottom: 18px;
+        .hero-brand-freedom {
+            font-family: 'Gilda Display', serif;
+            font-weight: 400;
+            font-size: clamp(20px, 4.2vw, 54px);
+            color: #050505;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            margin-top: 18px;
         }
 
-        .hero-sub {
+        .hero-tagline {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: clamp(16px, 2vw, 22px);
-            color: var(--gold);
-            margin-bottom: 52px;
-            letter-spacing: 0.5px;
-        }
-
-        .hero-cta {
-            display: inline-block;
-            position: relative;
-            background: linear-gradient(135deg, #C8A52A 0%, #D9B840 50%, #C8A52A 100%);
-            color: #060606;
-            padding: 20px 60px;
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 3.5px;
-            text-transform: uppercase;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.25s, box-shadow 0.25s;
-            box-shadow: 0 0 40px rgba(201,168,76,0.30), 0 4px 16px rgba(21,19,17,0.15);
-        }
-
-        .hero-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 50px rgba(201,168,76,0.45), 0 4px 16px rgba(21,19,17,0.15);
-        }
-
-        .section-cta-wrap {
-            text-align: center;
-            margin-top: 52px;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 64px;
-            margin-top: 90px;
-            padding-top: 44px;
-            border-top: 1px solid var(--gold-border);
-            flex-wrap: wrap;
-        }
-
-        .stat-num {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(28px, 4vw, 38px);
-            font-weight: 700;
-            color: var(--gold);
-            display: block;
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-
-        .stat-lbl {
-            font-size: 11px;
-            color: var(--text-3);
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            font-size: clamp(18px, 2.2vw, 28px);
+            color: rgba(0, 0, 0, 0.5);
+            margin-bottom: 56px;
         }
 
         /* ========================
-           SECTION: UNIVERSITY
+           TWO-PARTS LAYOUT
            ======================== */
-        #university {
-            background: var(--bg-1);
-            border-top: 1px solid var(--gold-border);
-            border-bottom: 1px solid var(--gold-border);
+        .two-parts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: rgba(0,0,0,0.07);
+            border: 1px solid rgba(0,0,0,0.07);
+            text-align: left;
+            margin-top: 48px;
+            margin-bottom: 96px;
+        }
+        .part-card {
+            background: var(--white);
+            padding: 52px 42px;
+            transition: background 0.3s;
+        }
+        .part-card:hover { background: var(--off-white); }
+        .part-icon { font-size: 30px; display: block; margin-bottom: 20px; }
+        .part-title {
+            font-family: 'Gilda Display', serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--black);
+            margin-bottom: 14px;
+            letter-spacing: 0.04em;
+        }
+        .part-text {
+            color: rgba(0,0,0,0.5);
+            font-size: 15px;
+            line-height: 1.85;
         }
 
-        .uni-intro {
-            max-width: 680px;
-            color: var(--text-2);
-            font-size: 17px;
-            line-height: 1.75;
-            margin-top: 16px;
+        /* ========================
+           SECTION: CLUB RUBRICS
+           ======================== */
+        #club {
+            background: var(--white);
+            text-align: center;
         }
 
-        .uni-grid {
+        .club-intro {
+            max-width: 600px;
+            margin: 0 auto 64px;
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.55);
+            line-height: 1.85;
+        }
+
+        .rubrics-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
-            margin-top: 60px;
+            gap: 1px;
+            background: rgba(0, 0, 0, 0.07);
+            border: 1px solid rgba(0, 0, 0, 0.07);
+            text-align: left;
         }
 
-        .uni-card {
-            background: var(--bg-card);
+        .rubric-card {
+            background: var(--white);
             padding: 52px 42px;
-            position: relative;
-            border: 1px solid transparent;
-            overflow: hidden;
-            transition: background 0.35s, border-color 0.35s;
+            transition: background 0.3s;
         }
+        .rubric-card:hover { background: var(--off-white); }
 
-        .uni-card:hover {
-            background: var(--bg-card-h);
-            border-color: var(--gold-border);
-        }
-
-        .uni-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            opacity: 0;
-            transition: opacity 0.35s;
-        }
-
-        .uni-card:hover::before { opacity: 1; }
-
-        .uni-num {
-            font-family: 'Cinzel', serif;
-            font-size: 80px;
-            font-weight: 900;
-            color: rgba(21,19,17,0.07);
-            position: absolute;
-            top: 14px; right: 24px;
-            line-height: 1;
-            pointer-events: none;
-        }
-
-        .uni-icon {
-            font-size: 46px;
+        .rubric-icon {
+            font-size: 30px;
             display: block;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
-        .uni-title {
-            font-size: 21px;
-            font-weight: 700;
-            color: var(--gold);
+        .rubric-title {
+            font-family: 'Gilda Display', serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--black);
+            margin-bottom: 12px;
+            letter-spacing: 0.04em;
+        }
+
+        .rubric-text {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .rubric-format {
+            display: inline-block;
+            background: var(--black);
+            color: var(--white);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 10px;
             margin-bottom: 14px;
-        }
-
-        .uni-text {
-            color: var(--text-2);
-            font-size: 14.5px;
-            line-height: 1.75;
         }
 
         /* ========================
            SECTION: FOR WHOM
            ======================== */
-        #for-whom { background: var(--bg-0); }
+        #for-whom {
+            background: url('hero_bg.jpg') center top / cover no-repeat;
+            text-align: center;
+            position: relative;
+        }
+        #for-whom::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.72);
+            pointer-events: none;
+            z-index: 0;
+        }
+        #for-whom > * { position: relative; z-index: 1; }
 
         .pain-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            margin-top: 60px;
+            gap: 1px;
+            background: rgba(0, 0, 0, 0.07);
+            border: 1px solid rgba(0, 0, 0, 0.07);
+            margin-top: 64px;
+            text-align: left;
         }
 
         .pain-card {
-            background: var(--bg-card);
-            border: 1px solid var(--gold-border);
-            padding: 42px 36px;
-            transition: transform 0.35s, box-shadow 0.35s;
+            background: var(--white);
+            padding: 52px 40px;
+            border-left: 2px solid transparent;
+            transition: border-color 0.3s, background 0.3s;
         }
+        .pain-card:hover { border-left-color: var(--gold); background: var(--off-white); }
 
-        .pain-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 24px 64px rgba(201,168,76,0.10);
-        }
-
-        .pain-icon-box {
-            width: 58px;
-            height: 58px;
-            border: 1px solid var(--gold-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            margin-bottom: 24px;
+        .pain-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 13px;
+            color: var(--gold);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            display: block;
         }
 
         .pain-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--gold);
+            font-family: 'Gilda Display', serif;
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--black);
             margin-bottom: 14px;
+            letter-spacing: 0.04em;
         }
 
         .pain-text {
-            color: var(--text-2);
-            font-size: 14.5px;
-            line-height: 1.75;
-        }
-
-        /* ========================
-           SECTION: CURRICULUM
-           ======================== */
-        #curriculum {
-            background: var(--bg-1);
-            border-top: 1px solid var(--gold-border);
-        }
-
-        .modules-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 28px;
-            margin-top: 60px;
-        }
-
-        .module-card {
-            background: var(--bg-card);
-            border: 1px solid var(--gold-border);
-            padding: 42px;
-            position: relative;
-            overflow: hidden;
-            transition: background 0.35s, transform 0.35s, box-shadow 0.35s;
-        }
-
-        .module-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        }
-
-        .module-card:hover {
-            background: var(--bg-card-h);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 60px rgba(201,168,76,0.09);
-        }
-
-        .module-num {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 12px;
-            color: var(--gold);
-            letter-spacing: 4px;
-            margin-bottom: 14px;
-        }
-
-        .module-icon {
-            font-size: 34px;
-            display: block;
-            margin-bottom: 18px;
-        }
-
-        .module-title {
-            font-size: 21px;
-            font-weight: 700;
-            margin-bottom: 18px;
-            color: var(--text-1);
-        }
-
-        .module-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 9px;
-        }
-
-        .module-list li {
-            color: var(--text-2);
+            color: rgba(0, 0, 0, 0.5);
             font-size: 14px;
-            padding-left: 18px;
-            position: relative;
-        }
-
-        .module-list li::before {
-            content: '—';
-            position: absolute;
-            left: 0;
-            color: var(--gold);
+            line-height: 1.85;
         }
 
         /* ========================
            SECTION: AUTHOR
            ======================== */
-        #author {
-            background: var(--bg-0);
-            border-top: 1px solid var(--gold-border);
-        }
+        #author { background: var(--white); }
 
         .author-grid {
             display: grid;
-            grid-template-columns: 380px 1fr;
+            grid-template-columns: 400px 1fr;
             gap: 80px;
             align-items: center;
         }
 
-        .author-photo-wrap {
-            position: relative;
-            flex-shrink: 0;
-        }
+        .author-photo-wrap { position: relative; flex-shrink: 0; }
 
-        .author-frame {
-            border: 1px solid var(--gold-border);
-            padding: 5px;
-            position: relative;
-        }
+        .author-frame { border: 1px solid rgba(0, 0, 0, 0.1); }
 
-        .author-frame::before {
-            content: '';
-            position: absolute;
-            top: 18px; left: 18px;
-            right: -18px; bottom: -18px;
-            border: 1px solid rgba(201,168,76,0.15);
-            z-index: -1;
-        }
-
-        .author-photo {
-            width: 100%;
-            aspect-ratio: 3/4;
-            background: linear-gradient(160deg, #DDD6C8, #C8BFB0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 90px;
-        }
         .author-photo-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center top;
-            border-radius: inherit;
             display: block;
         }
 
         .author-stamp {
             position: absolute;
-            bottom: -18px; right: -18px;
+            bottom: -20px; right: -20px;
             background: var(--gold);
-            color: #151311;
-            padding: 16px 22px;
+            color: #000;
+            padding: 18px 24px;
             font-family: 'Cinzel', serif;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
-            line-height: 1.5;
+            line-height: 1.6;
             text-align: center;
         }
 
         .author-name {
-            font-size: clamp(30px, 4vw, 48px);
-            font-weight: 700;
-            margin-bottom: 6px;
+            font-family: 'Gilda Display', serif;
+            font-size: clamp(36px, 5vw, 60px);
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            color: var(--black);
+            margin-bottom: 8px;
         }
 
         .author-role {
@@ -681,31 +539,26 @@
         }
 
         .author-bio {
-            color: var(--text-2);
+            color: rgba(0, 0, 0, 0.55);
             font-size: 16px;
-            line-height: 1.8;
-            margin-bottom: 38px;
+            line-height: 1.85;
+            margin-bottom: 40px;
         }
 
-        .credentials {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
+        .credentials { display: flex; flex-direction: column; gap: 0; }
 
         .cred {
             display: flex;
             align-items: center;
             gap: 16px;
-            padding: 16px 20px;
-            background: var(--bg-card);
-            border-left: 2px solid var(--gold);
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
 
-        .cred-icon { font-size: 20px; flex-shrink: 0; }
+        .cred-icon { font-size: 18px; flex-shrink: 0; }
 
         .cred-main {
-            color: var(--text-1);
+            color: var(--black);
             font-size: 14px;
             font-weight: 600;
             display: block;
@@ -713,164 +566,86 @@
         }
 
         .cred-sub {
-            color: var(--text-2);
+            color: rgba(0, 0, 0, 0.45);
             font-size: 13px;
-        }
-
-        /* ========================
-           SECTION: RESULTS
-           ======================== */
-        #results {
-            background: var(--bg-1);
-            border-top: 1px solid var(--gold-border);
-            border-bottom: 1px solid var(--gold-border);
-            text-align: center;
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
-            margin-top: 60px;
-        }
-
-        .result-card {
-            background: var(--bg-card);
-            border: 1px solid var(--gold-border);
-            padding: 42px 34px;
-            text-align: center;
-            position: relative;
-            transition: transform 0.35s, box-shadow 0.35s;
-        }
-
-        .result-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 24px 70px rgba(201,168,76,0.14);
-        }
-
-        .result-card::before {
-            content: '\201C';
-            position: absolute;
-            top: 14px; left: 22px;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 72px;
-            color: rgba(21,19,17,0.10);
-            line-height: 1;
-        }
-
-        .result-num {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(34px, 4vw, 50px);
-            font-weight: 900;
-            background: linear-gradient(135deg, #C8A52A, #D9B840);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: block;
-            margin-bottom: 6px;
-        }
-
-        .result-period {
-            font-size: 11px;
-            color: var(--gold);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .result-quote {
-            color: var(--text-2);
-            font-size: 14.5px;
-            line-height: 1.75;
-            margin-bottom: 20px;
-        }
-
-        .result-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 15px;
-            color: var(--text-1);
         }
 
         /* ========================
            SECTION: PRICING
            ======================== */
         #pricing {
-            background: var(--bg-0);
+            background: url('hero_bg.jpg') center top / cover no-repeat;
             text-align: center;
+            position: relative;
         }
+        #pricing::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.72);
+            pointer-events: none;
+            z-index: 0;
+        }
+        #pricing > * { position: relative; z-index: 1; }
 
         .pricing-wrap {
-            max-width: 680px;
-            margin: 60px auto 0;
+            max-width: 640px;
+            margin: 64px auto 0;
         }
 
         .pricing-card {
-            background: var(--bg-card);
-            border: 1px solid var(--gold);
+            background: var(--white);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             padding: 64px 60px;
-            position: relative;
-            overflow: hidden;
             text-align: left;
-        }
-
-        /* top gold bar */
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #9A7B1C, #E8CC50, #9A7B1C);
-        }
-
-        /* corner ornament */
-        .pricing-card::after {
-            content: '✦';
-            position: absolute;
-            bottom: 22px; right: 26px;
-            font-size: 18px;
-            color: rgba(201,168,76,0.15);
         }
 
         .pricing-badge {
             display: inline-block;
             background: var(--gold);
-            color: #151311;
+            color: #000;
             padding: 6px 20px;
             font-size: 10px;
             font-weight: 700;
             letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 32px;
+            margin-bottom: 40px;
         }
 
         .pricing-plan-label {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: 15px;
-            color: var(--text-2);
-            letter-spacing: 1px;
-            margin-bottom: 6px;
+            font-size: 17px;
+            color: rgba(0, 0, 0, 0.45);
+            margin-bottom: 8px;
         }
 
         .pricing-amount {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(54px, 8vw, 82px);
-            font-weight: 900;
+            font-family: 'Gilda Display', serif;
+            font-size: clamp(60px, 10vw, 100px);
+            font-weight: 400;
             line-height: 1;
-            background: linear-gradient(135deg, #C8A52A 0%, #D9B840 50%, #C8A52A 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--gold);
             margin-bottom: 4px;
             display: block;
+            letter-spacing: -0.02em;
         }
 
         .pricing-period {
-            color: var(--text-2);
+            color: rgba(0, 0, 0, 0.45);
             font-size: 15px;
-            margin-bottom: 42px;
+            margin-bottom: 44px;
+        }
+
+        .pricing-message {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 18px;
+            line-height: 1.75;
+            color: rgba(0, 0, 0, 0.65);
+            margin-bottom: 44px;
+            padding: 28px 32px;
+            border-left: 2px solid var(--gold);
         }
 
         .pricing-features {
@@ -882,29 +657,28 @@
         }
 
         .pricing-features li {
-            color: var(--text-2);
+            color: rgba(0, 0, 0, 0.65);
             font-size: 15px;
             display: flex;
             align-items: flex-start;
-            gap: 12px;
+            gap: 14px;
         }
 
         .pricing-features li::before {
-            content: '✦';
+            content: '—';
             color: var(--gold);
-            font-size: 9px;
-            margin-top: 5px;
+            font-size: 14px;
             flex-shrink: 0;
         }
 
         .pricing-divider {
             border: none;
-            border-top: 1px solid var(--gold-border);
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
             margin: 44px 0;
         }
 
         .form-hint {
-            color: var(--text-2);
+            color: rgba(0, 0, 0, 0.45);
             font-size: 14px;
             margin-bottom: 24px;
             text-align: center;
@@ -913,14 +687,14 @@
         .signup-form {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 12px;
         }
 
         .f-input {
             width: 100%;
-            background: var(--bg-0);
-            border: 1px solid var(--gold-border);
-            color: var(--text-1);
+            background: var(--off-white);
+            border: 1px solid rgba(0, 0, 0, 0.14);
+            color: var(--black);
             padding: 18px 20px;
             font-family: 'Inter', sans-serif;
             font-size: 15px;
@@ -928,137 +702,105 @@
             transition: border-color 0.25s;
             -webkit-appearance: none;
         }
-
-        .f-input::placeholder { color: var(--sand); }
+        .f-input::placeholder { color: rgba(0, 0, 0, 0.32); }
         .f-input:focus { border-color: var(--gold); }
-
-        /* autofill override */
         .f-input:-webkit-autofill {
-            -webkit-box-shadow: 0 0 0 100px var(--bg-0) inset;
-            -webkit-text-fill-color: var(--text-1);
+            -webkit-box-shadow: 0 0 0 100px #f5f5f5 inset;
+            -webkit-text-fill-color: var(--black);
         }
 
         .submit-btn {
             width: 100%;
-            background: linear-gradient(135deg, #C8A52A 0%, #D9B840 50%, #C8A52A 100%);
-            color: #060606;
+            background: var(--gold);
+            color: #000;
             border: none;
             padding: 20px;
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 3.5px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 4px;
             text-transform: uppercase;
             cursor: pointer;
-            transition: transform 0.25s, box-shadow 0.25s;
-            box-shadow: 0 4px 30px rgba(201,168,76,0.28);
+            transition: opacity 0.25s;
         }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 50px rgba(201,168,76,0.45);
-        }
-
-        .submit-btn:active { transform: translateY(0); }
-
-        .submit-btn.loading {
-            opacity: 0.7;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
+        .submit-btn:hover { opacity: 0.82; }
+        .submit-btn:active { opacity: 0.7; }
+        .submit-btn.loading { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
 
         .success-msg {
             display: none;
             text-align: center;
             padding: 48px 32px;
             border: 1px solid var(--gold-border);
-            background: rgba(201,168,76,0.04);
         }
-
         .success-msg.show { display: block; }
-
-        .success-icon { font-size: 52px; margin-bottom: 18px; display: block; }
-
+        .success-icon { font-size: 48px; margin-bottom: 20px; display: block; }
         .success-title {
-            font-family: 'Cinzel', serif;
-            font-size: 26px;
+            font-family: 'Gilda Display', serif;
+            font-size: 28px;
+            font-weight: 400;
             color: var(--gold);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
-
         .success-body {
-            color: var(--text-2);
+            color: rgba(0, 0, 0, 0.55);
             font-size: 15px;
-            line-height: 1.7;
+            line-height: 1.75;
         }
 
-        .error-msg {
-            color: #ff6b6b;
-            font-size: 13px;
-            margin-top: 8px;
-            display: none;
-        }
-
+        .error-msg { color: #ff6b6b; font-size: 13px; margin-top: 6px; display: none; }
         .error-msg.show { display: block; }
 
         /* ========================
            SECTION: FAQ
            ======================== */
-        #faq {
-            background: var(--bg-1);
-            border-top: 1px solid var(--gold-border);
-            text-align: center;
-        }
+        #faq { background: var(--white); text-align: center; }
 
         .faq-list {
-            max-width: 780px;
-            margin: 60px auto 0;
+            max-width: 760px;
+            margin: 64px auto 0;
             text-align: left;
         }
 
-        .faq-item {
-            border-bottom: 1px solid var(--gold-border);
-            overflow: hidden;
-        }
+        .faq-item { border-bottom: 1px solid rgba(0, 0, 0, 0.1); overflow: hidden; }
 
         .faq-q {
             width: 100%;
             background: none;
             border: none;
-            color: var(--text-1);
+            color: var(--black);
             padding: 28px 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 24px;
-            font-family: 'Cinzel', serif;
-            font-size: 16px;
-            font-weight: 600;
+            font-family: 'Gilda Display', serif;
+            font-size: 18px;
+            font-weight: 400;
             text-align: left;
             cursor: pointer;
             transition: color 0.25s;
+            letter-spacing: 0.02em;
         }
-
         .faq-q:hover { color: var(--gold); }
         .faq-q.active { color: var(--gold); }
 
         .faq-toggle {
             flex-shrink: 0;
-            width: 30px; height: 30px;
-            border: 1px solid var(--gold-border);
+            width: 28px; height: 28px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gold);
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 300;
             line-height: 1;
-            transition: transform 0.3s, border-color 0.25s;
+            transition: transform 0.3s, border-color 0.25s, color 0.25s;
         }
-
         .faq-q.active .faq-toggle {
             transform: rotate(45deg);
             border-color: var(--gold);
+            color: var(--gold);
         }
 
         .faq-a {
@@ -1066,47 +808,48 @@
             overflow: hidden;
             transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        .faq-a.open { max-height: 320px; }
+        .faq-a.open { max-height: 360px; }
 
         .faq-a-inner {
             padding-bottom: 28px;
-            color: var(--text-2);
+            color: rgba(0, 0, 0, 0.55);
             font-size: 15px;
-            line-height: 1.8;
+            line-height: 1.85;
         }
 
         /* ========================
            FOOTER
            ======================== */
         footer {
-            background: var(--bg-0);
-            border-top: 1px solid var(--gold-border);
+            background: var(--off-white);
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
             padding: 70px 24px 40px;
             text-align: center;
+            color: var(--black);
         }
 
         .footer-logo {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
         .footer-logo-text {
             font-family: 'Cinzel', serif;
             font-weight: 400;
-            font-size: 29px;
-            letter-spacing: 12px;
-            color: var(--gold);
+            font-size: 16px;
+            letter-spacing: 8px;
+            color: #050505;
             display: block;
-            padding-right: 12px; /* optical offset */
+            padding-right: 8px;
         }
 
         .footer-tagline {
-            color: var(--text-3);
-            font-size: 13px;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            margin-bottom: 42px;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: rgba(0, 0, 0, 0.4);
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-bottom: 44px;
         }
 
         .footer-nav {
@@ -1116,24 +859,22 @@
             flex-wrap: wrap;
             margin-bottom: 50px;
         }
-
         .footer-nav a {
-            color: var(--text-2);
+            color: rgba(0, 0, 0, 0.45);
             text-decoration: none;
             font-size: 13px;
             transition: color 0.25s;
         }
-
         .footer-nav a:hover { color: var(--gold); }
 
         .footer-divider {
             border: none;
-            border-top: 1px solid rgba(201,168,76,0.12);
+            border-top: 1px solid rgba(0, 0, 0, 0.07);
             margin-bottom: 28px;
         }
 
         .footer-legal {
-            color: var(--text-3);
+            color: rgba(0, 0, 0, 0.3);
             font-size: 12px;
             line-height: 1.8;
         }
@@ -1146,122 +887,30 @@
             transform: translateY(28px);
             transition: opacity 0.7s ease, transform 0.7s ease;
         }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ========================
-           PALETTE ACCENTS
-           ======================== */
-
-        /* Section eyebrows — espresso on light bg for depth */
-        #university .section-eyebrow { color: var(--caramel); }
-        #curriculum .section-eyebrow { color: var(--espresso); }
-        #author .section-eyebrow    { color: var(--caramel); }
-        #results .section-eyebrow   { color: var(--espresso); }
-        #faq .section-eyebrow       { color: var(--caramel); }
-
-        /* Section alt backgrounds */
-        #university {
-            background: var(--bg-1);
-            border-top: 1px solid var(--gold-border);
-            border-bottom: 1px solid var(--gold-border);
-        }
-        #results {
-            background: var(--bg-1);
-            border-top: 1px solid var(--gold-border);
-            border-bottom: 1px solid var(--gold-border);
-        }
-        #faq {
-            background: var(--bg-1);
-            border-top: 1px solid var(--gold-border);
-        }
-        #curriculum {
-            background: var(--bg-0);
-        }
-
-        /* Card base shadow — visible on light bg */
-        .uni-card, .pain-card, .module-card, .result-card {
-            box-shadow: 0 2px 14px rgba(21,19,17,0.06);
-        }
-
-        /* Card hover — dark subtle shadow on light bg */
-        .pain-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 40px rgba(21,19,17,0.12);
-        }
-        .module-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 36px rgba(21,19,17,0.10);
-        }
-        .result-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 40px rgba(21,19,17,0.12);
-        }
-
-        /* Uni card top border on hover — caramel instead of gold */
-        #university .uni-card:hover::before {
-            background: linear-gradient(90deg, transparent, var(--caramel), transparent);
-        }
-
-        /* Curriculum module card bottom rule */
-        #curriculum .module-card::after {
-            background: linear-gradient(90deg, transparent, var(--caramel), transparent);
-        }
-
-        /* Credential accents */
-        .cred:nth-child(even) { border-left-color: var(--caramel); }
-
-        /* Period labels on result cards */
-        .result-period { color: var(--espresso); }
-
-        /* Pricing card top bar */
-        .pricing-card::before {
-            background: linear-gradient(90deg, #9A7B1C, #C8A52A, #E8CC50, #C8A52A, #9A7B1C);
-        }
-
-        /* Gold rule caramel variant */
-        #results .gold-rule,
-        #curriculum .gold-rule {
-            background: linear-gradient(90deg, transparent, var(--caramel), transparent);
-        }
-
-        /* Cormorant sizing */
-        .hero-sub { font-size: clamp(18px, 2.2vw, 26px); }
-        .pricing-plan-label { font-size: 17px; }
-        .result-name { font-size: 17px; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
 
         /* ========================
            RESPONSIVE
            ======================== */
         @media (max-width: 1100px) {
             .author-grid { grid-template-columns: 1fr; gap: 60px; }
-            .author-photo-wrap { max-width: 340px; margin: 0 auto; }
+            .author-photo-wrap { max-width: 360px; margin: 0 auto; }
         }
 
         @media (max-width: 900px) {
-            #navbar { padding: 10px 24px; }
+            #navbar { padding: 14px 24px; }
             .nav-links, .nav-btn { display: none; }
             .hamburger { display: flex; }
-
-            .uni-grid { grid-template-columns: 1fr; }
+            .rubrics-grid { grid-template-columns: 1fr; }
+            .two-parts-grid { grid-template-columns: 1fr; }
             .pain-grid { grid-template-columns: 1fr; }
-            .modules-grid { grid-template-columns: 1fr; }
-            .results-grid { grid-template-columns: 1fr; }
-
-            section { padding: 70px 20px; }
-
-            .hero-stats { gap: 32px; }
-            .pricing-card { padding: 44px 32px; }
+            section { padding: 80px 20px; }
+            .pricing-card { padding: 44px 28px; }
         }
 
         @media (max-width: 520px) {
-            .hero-logo { letter-spacing: 5px; }
-            .hero-stats { flex-direction: column; align-items: center; gap: 24px; }
-            .hero-cta { padding: 18px 40px; }
-            .pricing-card { padding: 36px 24px; }
+            .hero-cta { padding: 18px 40px; letter-spacing: 3px; }
+            .pricing-card { padding: 36px 20px; }
         }
 
         /* ========================
@@ -1271,7 +920,7 @@
             position: fixed;
             inset: 0;
             z-index: 99999;
-            background: radial-gradient(ellipse at 50% 55%, #2C1309 0%, #190B05 50%, #100603 100%);
+            background: #000;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1284,7 +933,6 @@
             pointer-events: none;
         }
 
-        /* Floating gold star particles */
         .pl-star {
             position: absolute;
             border-radius: 50%;
@@ -1292,38 +940,33 @@
             animation: pl-drift linear forwards;
         }
         @keyframes pl-drift {
-            0%   { opacity: 0;   transform: translateY(0)     scale(1);    }
-            15%  { opacity: 1;                                              }
-            80%  { opacity: 0.5;                                            }
-            100% { opacity: 0;   transform: translateY(-280px) scale(0.1); }
+            0%   { opacity: 0; transform: translateY(0) scale(1); }
+            15%  { opacity: 1; }
+            80%  { opacity: 0.5; }
+            100% { opacity: 0; transform: translateY(-280px) scale(0.1); }
         }
 
-        /* Inner wrapper */
-        .pl-inner {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
+        .pl-inner { text-align: center; position: relative; z-index: 1; }
 
-        /* Logo — letter-by-letter */
         .pl-logo {
-            font-family: 'Cinzel', serif;
+            font-family: 'Gilda Display', serif;
             font-weight: 400;
-            font-size: clamp(26px, 5.5vw, 66px);
-            letter-spacing: 14px;
-            color: #C8A52A;
+            font-size: clamp(16px, 3.5vw, 48px);
+            letter-spacing: 10px;
+            color: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            animation: pl-glow 2.5s ease-in-out 2.1s infinite alternate;
+            animation: pl-glow 2.5s ease-in-out 2.6s infinite alternate;
         }
         @keyframes pl-glow {
-            from { text-shadow: 0 0 10px rgba(201,168,76,0.2); }
-            to   { text-shadow: 0 0 28px rgba(201,168,76,0.75), 0 0 60px rgba(201,168,76,0.25); }
+            from { text-shadow: 0 0 10px rgba(212,175,55,0.2); }
+            to   { text-shadow: 0 0 30px rgba(212,175,55,0.7), 0 0 60px rgba(212,175,55,0.2); }
         }
 
-        /* Each letter */
+        /* FREEDOM letters (spans 6–12) in gold */
+        .pl-logo span:nth-child(n+6):nth-child(-n+12) { color: var(--gold); }
+
         .pl-logo span {
             display: inline-block;
             opacity: 0;
@@ -1332,49 +975,47 @@
         }
         .pl-logo .pl-sp { width: 0.38em; }
 
-        /* Staggered delays — C B C [sp] A C A D E M Y */
+        /* C A M I [sp] F R E E D O M [sp] C L U B — 17 spans */
         .pl-logo span:nth-child(1)  { animation-delay: 0.20s; }
-        .pl-logo span:nth-child(2)  { animation-delay: 0.34s; }
-        .pl-logo span:nth-child(3)  { animation-delay: 0.48s; }
-        .pl-logo span:nth-child(4)  { animation-delay: 0.58s; }
-        .pl-logo span:nth-child(5)  { animation-delay: 0.68s; }
-        .pl-logo span:nth-child(6)  { animation-delay: 0.82s; }
-        .pl-logo span:nth-child(7)  { animation-delay: 0.96s; }
-        .pl-logo span:nth-child(8)  { animation-delay: 1.10s; }
-        .pl-logo span:nth-child(9)  { animation-delay: 1.24s; }
-        .pl-logo span:nth-child(10) { animation-delay: 1.38s; }
-        .pl-logo span:nth-child(11) { animation-delay: 1.52s; }
+        .pl-logo span:nth-child(2)  { animation-delay: 0.32s; }
+        .pl-logo span:nth-child(3)  { animation-delay: 0.44s; }
+        .pl-logo span:nth-child(4)  { animation-delay: 0.56s; }
+        .pl-logo span:nth-child(5)  { animation-delay: 0.66s; }
+        .pl-logo span:nth-child(6)  { animation-delay: 0.76s; }
+        .pl-logo span:nth-child(7)  { animation-delay: 0.88s; }
+        .pl-logo span:nth-child(8)  { animation-delay: 1.00s; }
+        .pl-logo span:nth-child(9)  { animation-delay: 1.12s; }
+        .pl-logo span:nth-child(10) { animation-delay: 1.24s; }
+        .pl-logo span:nth-child(11) { animation-delay: 1.36s; }
+        .pl-logo span:nth-child(12) { animation-delay: 1.48s; }
+        .pl-logo span:nth-child(13) { animation-delay: 1.58s; }
+        .pl-logo span:nth-child(14) { animation-delay: 1.68s; }
+        .pl-logo span:nth-child(15) { animation-delay: 1.80s; }
+        .pl-logo span:nth-child(16) { animation-delay: 1.92s; }
+        .pl-logo span:nth-child(17) { animation-delay: 2.04s; }
 
-        @keyframes pl-letter {
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes pl-letter { to { opacity: 1; transform: translateY(0); } }
 
-        /* Gold divider bar */
         .pl-bar {
             margin: 22px auto 0;
             height: 1px;
             width: 0;
-            background: linear-gradient(90deg, transparent, #C8A52A, transparent);
-            animation: pl-expand 1s ease 2.1s forwards;
+            background: var(--gold);
+            animation: pl-expand 0.8s ease 2.5s forwards;
         }
-        @keyframes pl-expand {
-            to { width: 180px; }
-        }
+        @keyframes pl-expand { to { width: 220px; } }
 
-        /* Italic tagline */
         .pl-tagline {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: clamp(10px, 1.6vw, 15px);
+            font-size: clamp(11px, 1.6vw, 15px);
             letter-spacing: 5px;
-            color: rgba(201, 168, 76, 0.5);
-            margin-top: 16px;
+            color: rgba(212, 175, 55, 0.5);
+            margin-top: 18px;
             opacity: 0;
-            animation: pl-fade 1s ease 2.2s forwards;
+            animation: pl-fade 0.8s ease 2.6s forwards;
         }
-        @keyframes pl-fade {
-            to { opacity: 1; }
-        }
+        @keyframes pl-fade { to { opacity: 1; } }
 
     </style>
 </head>
@@ -1383,32 +1024,31 @@
     <!-- ===== PRELOADER ===== -->
     <div id="preloader">
         <div class="pl-inner">
-            <div class="pl-logo" aria-label="CBC ACADEMY">
-                <span>C</span><span>B</span><span>C</span><span class="pl-sp">&nbsp;</span><span>A</span><span>C</span><span>A</span><span>D</span><span>E</span><span>M</span><span>Y</span>
+            <div class="pl-logo" aria-label="CAMI FREEDOM CLUB">
+                <span>C</span><span>A</span><span>M</span><span>I</span><span class="pl-sp">&nbsp;</span><span>F</span><span>R</span><span>E</span><span>E</span><span>D</span><span>O</span><span>M</span><span class="pl-sp">&nbsp;</span><span>C</span><span>L</span><span>U</span><span>B</span>
             </div>
             <div class="pl-bar"></div>
-            <div class="pl-tagline">Элитное образование в SMM</div>
+            <div class="pl-tagline">Это не курс. Это стиль жизни.</div>
         </div>
     </div>
 
     <!-- ===== NAVIGATION ===== -->
     <nav id="navbar">
-        <a href="#hero" class="nav-logo" aria-label="CBC Academy">
+        <a href="#hero" class="nav-logo" aria-label="Cami Freedom Club">
             <div class="nav-logo-text">
-                <span class="nav-logo-cbc">CBC</span>
-                <span class="nav-logo-acad">ACADEMY</span>
+                <span class="nav-logo-cbc">CAMI</span>
+                <span class="nav-logo-acad"><span style="color:var(--gold)">FREEDOM</span> CLUB</span>
             </div>
         </a>
 
         <ul class="nav-links">
-            <li><a href="#university">Академия</a></li>
-            <li><a href="#curriculum">Программа</a></li>
-            <li><a href="#author">Декан</a></li>
-            <li><a href="#results">Результаты</a></li>
+            <li><a href="#club">Клуб</a></li>
+            <li><a href="#for-whom">Для кого</a></li>
+            <li><a href="#author">Камилла</a></li>
             <li><a href="#faq">FAQ</a></li>
         </ul>
 
-        <a href="#pricing" class="nav-btn">Записаться</a>
+        <a href="#pricing" class="nav-btn">Вступить</a>
 
         <div class="hamburger" id="hamburger" aria-label="Меню" role="button" tabindex="0">
             <span></span><span></span><span></span>
@@ -1418,11 +1058,10 @@
     <!-- Mobile menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="#university" onclick="closeMob()">Академия</a></li>
-            <li><a href="#curriculum" onclick="closeMob()">Программа</a></li>
-            <li><a href="#author" onclick="closeMob()">Декан</a></li>
-            <li><a href="#results" onclick="closeMob()">Результаты</a></li>
-            <li><a href="#pricing" onclick="closeMob()">Записаться</a></li>
+            <li><a href="#club" onclick="closeMob()">Клуб</a></li>
+            <li><a href="#for-whom" onclick="closeMob()">Для кого</a></li>
+            <li><a href="#author" onclick="closeMob()">Камилла</a></li>
+            <li><a href="#pricing" onclick="closeMob()">Вступить</a></li>
             <li><a href="#faq" onclick="closeMob()">FAQ</a></li>
         </ul>
     </div>
@@ -1430,181 +1069,134 @@
     <!-- ===== HERO ===== -->
     <section id="hero">
         <div class="hero-inner">
-            <div class="hero-tag">Элитная онлайн-школа SMM · Запуск Скоро</div>
-            <div class="hero-logo-text">CBC&nbsp;ACADEMY</div>
-            <h1 class="hero-headline">
-                Стань СММ-специалистом<br>и <span style="color:var(--gold)">зарабатывай</span> из дома
-            </h1>
-            <p class="hero-sub">Ранняя запись открыта — зафиксируй цену подписки</p>
-            <a href="#pricing" class="hero-cta">Присоединиться к академии</a>
-
-            <div class="hero-stats">
-                <div>
-                    <span class="stat-num">500+</span>
-                    <span class="stat-lbl">Выпускников</span>
-                </div>
-                <div>
-                    <span class="stat-num">4</span>
-                    <span class="stat-lbl">Модуля</span>
-                </div>
-                <div>
-                    <span class="stat-num">150к ₽</span>
-                    <span class="stat-lbl">Средний доход</span>
-                </div>
-                <div>
-                    <span class="stat-num">7</span>
-                    <span class="stat-lbl">Лет опыта</span>
-                </div>
+            <div class="hero-tag">Закрытый клуб · Предзапуск открыт</div>
+            <div class="hero-brand">
+                <div class="hero-brand-cami">CAMI</div>
+                <div class="hero-brand-freedom"><span style="color:var(--gold)">FREEDOM</span>&nbsp;CLUB</div>
             </div>
+            <p class="hero-tagline">«Просить деньги — это наказание. Зарабатывать сама — это свобода.»</p>
+            <a href="#pricing" class="hero-cta">Получить ранний доступ</a>
         </div>
     </section>
 
-    <!-- ===== UNIVERSITY WORLD ===== -->
-    <section id="university">
-        <div class="container">
-            <span class="section-eyebrow">Наш кампус</span>
-            <h2 class="section-title">
-                Мир элитного<br><span class="gold-text">образования</span>
-            </h2>
-            <p class="uni-intro">
-                CBC Academy — это не просто онлайн-курс. Это полноценный университетский опыт,
-                где каждый студент становится частью избранного сообщества профессионалов.
-                Мы создали учебный кампус, который вдохновляет и меняет жизнь.
+    <!-- ===== CLUB: WHAT IS IT ===== -->
+    <section id="club">
+        <div class="container" style="text-align: center;">
+            <span class="section-eyebrow">О клубе</span>
+            <h2 class="section-title">ЧТО ТАКОЕ <span style="color:var(--gold)">CAMI FREEDOM CLUB</span></h2>
+            <div class="gold-rule"></div>
+            <p class="club-intro">
+                Это закрытое сообщество. Не просто контент — живое общение,
+                поддержка и доступ к Камилле лично.
             </p>
 
-            <div class="uni-grid">
-                <div class="uni-card reveal">
-                    <span class="uni-num">01</span>
-                    <span class="uni-icon">🎓</span>
-                    <div class="uni-title">Диплом выпускника</div>
-                    <p class="uni-text">
-                        После окончания программы каждый студент получает официальный диплом
-                        CBC Academy, подтверждающий квалификацию SMM-специалиста. Ваш выпускной —
-                        событие, которое открывает двери в мир высокооплачиваемой работы.
-                        Мы отмечаем успех каждого.
+            <div class="two-parts-grid">
+                <div class="part-card reveal">
+                    <span class="part-icon">✉️</span>
+                    <div class="part-title">Закрытый Telegram-клуб</div>
+                    <p class="part-text">
+                        Камилла публикует эксклюзивный контент каждую неделю из своей жизни,
+                        кухни, поездок и рабочих будней. Раз в месяц живой эфир.
+                        Это то, чего нет в открытом блоге.
                     </p>
                 </div>
-                <div class="uni-card reveal">
-                    <span class="uni-num">02</span>
-                    <span class="uni-icon">🏛️</span>
-                    <div class="uni-title">Закрытый кампус</div>
-                    <p class="uni-text">
-                        Наш цифровой кампус — это закрытое сообщество студентов и преподавателей.
-                        Живые занятия, групповые разборы, личная поддержка декана Камиллы.
-                        Атмосфера настоящего университета, где каждого знают по имени и
-                        каждый успех — повод для гордости.
-                    </p>
-                </div>
-                <div class="uni-card reveal">
-                    <span class="uni-num">03</span>
-                    <span class="uni-icon">👑</span>
-                    <div class="uni-title">Сеть выпускников</div>
-                    <p class="uni-text">
-                        Более 500 выпускников CBC Academy работают в лучших компаниях России
-                        и СНГ, ведут собственные агентства. Присоединяйтесь к элитному
-                        сообществу, где помогают друг другу, рекомендуют клиентов и
-                        создают партнёрства.
+                <div class="part-card reveal">
+                    <span class="part-icon">🎓</span>
+                    <div class="part-title">Курс «ИИ-СММ Заработок»</div>
+                    <p class="part-text">
+                        Внутри подписки — полноценный курс как зарабатывать на СММ
+                        с помощью ИИ-инструментов. Два инструктора, два канала клиентов:
+                        Instagram и Upwork. Уроки открываются поэтапно.
                     </p>
                 </div>
             </div>
-            <div class="section-cta-wrap"><a href="#pricing" class="hero-cta">Присоединиться к академии</a></div>
+
+            <h2 class="section-title">5 РУБРИК <span style="color:var(--gold)">КЛУБА</span></h2>
+            <div class="gold-rule"></div>
+
+            <div class="rubrics-grid">
+                <div class="rubric-card reveal">
+                    <span class="rubric-icon">💰</span>
+                    <div class="rubric-title">AI-Заработок</div>
+                    <span class="rubric-format">Формат: SMM · ИИ-инструменты · из дома</span>
+                    <p class="rubric-text">
+                        СММ и ИИ-инструменты из дома. Конкретные схемы,
+                        два канала клиентов: Instagram и Upwork.
+                    </p>
+                </div>
+                <div class="rubric-card reveal">
+                    <span class="rubric-icon">👑</span>
+                    <div class="rubric-title">Лайфстайл</div>
+                    <span class="rubric-format">Формат: Жизнь · Поездки · Будни</span>
+                    <p class="rubric-text">
+                        Жизнь Камиллы, которую она не показывает публично.
+                        Поездки, окружение, рабочие будни — без фильтров.
+                    </p>
+                </div>
+                <div class="rubric-card reveal">
+                    <span class="rubric-icon">🍰</span>
+                    <div class="rubric-title">Рецепты</div>
+                    <span class="rubric-format">Формат: Авторские рецепты на камеру</span>
+                    <p class="rubric-text">
+                        Авторские рецепты на камеру.
+                        Любимые блюда Камиллы — красиво, вкусно, просто.
+                    </p>
+                </div>
+                <div class="rubric-card reveal">
+                    <span class="rubric-icon">🏥</span>
+                    <div class="rubric-title">Здоровье</div>
+                    <span class="rubric-format">Формат: Анализы · Энергия · Уход</span>
+                    <p class="rubric-text">
+                        Анализы, энергия, уход за собой без воды.
+                        Всё, что реально работает.
+                    </p>
+                </div>
+                <div class="rubric-card reveal">
+                    <span class="rubric-icon">🔴</span>
+                    <div class="rubric-title">Живой эфир</div>
+                    <span class="rubric-format">Формат: Q&amp;A · 60–90 мин · раз в месяц</span>
+                    <p class="rubric-text">
+                        Q&amp;A с Камиллой раз в месяц, 60–90 минут.
+                        Живые вопросы — живые ответы.
+                    </p>
+                </div>
+            </div>
+            <div class="section-cta-wrap"><a href="#pricing" class="hero-cta">Получить ранний доступ</a></div>
         </div>
     </section>
 
-    <!-- ===== WHO IT'S FOR ===== -->
-    <section id="for-whom">
+    <!-- ===== FOR WHOM ===== -->
+    <section id="for-whom" class="section-dark">
         <div class="container" style="text-align: center;">
             <span class="section-eyebrow">Для кого</span>
-            <h2 class="section-title">Узнаёте себя?</h2>
+            <h2 class="section-title">ЭТО <span style="color:var(--gold)">ДЛЯ ТЕБЯ?</span></h2>
             <div class="gold-rule"></div>
 
             <div class="pain-grid">
                 <div class="pain-card reveal">
-                    <div class="pain-icon-box">💸</div>
-                    <div class="pain-title">«Хочу свои деньги»</div>
+                    <span class="pain-num">01</span>
+                    <div class="pain-title">Хочешь зарабатывать сама</div>
                     <p class="pain-text">
-                        Вы устали зависеть от чужих финансов. Хотите иметь собственный доход,
-                        чувствовать независимость и уверенность в завтрашнем дне — без
-                        просьб и объяснений, куда ушли деньги. Вы заслуживаете финансовой свободы.
+                        Не просить, не зависеть. Иметь свои деньги
+                        и знать откуда они придут завтра.
                     </p>
                 </div>
                 <div class="pain-card reveal">
-                    <div class="pain-icon-box">🏠</div>
-                    <div class="pain-title">«Работа рядом с детьми»</div>
+                    <span class="pain-num">02</span>
+                    <div class="pain-title">Хочешь жить красиво не когда-нибудь</div>
                     <p class="pain-text">
-                        Дети, семья, быт — и при этом вы мечтаете зарабатывать. SMM идеально
-                        подходит: работайте в свободные часы, не выходя из дома и не жертвуя
-                        драгоценным временем с теми, кто вам дорог.
+                        Не после. Сейчас. На своих условиях.
                     </p>
                 </div>
                 <div class="pain-card reveal">
-                    <div class="pain-icon-box">🚀</div>
-                    <div class="pain-title">«Нет опыта — страшно начать»</div>
+                    <span class="pain-num">03</span>
+                    <div class="pain-title">Хочешь окружение которое тянет вверх</div>
                     <p class="pain-text">
-                        Вы думаете, что для этого нужны специальные знания или образование —
-                        это миф. Наши выпускники начинали абсолютно с нуля и уже через
-                        60 дней зарабатывали от 50 000₽ в месяц.
+                        Сообщество женщин у которых горят глаза.
                     </p>
                 </div>
             </div>
-            <div class="section-cta-wrap"><a href="#pricing" class="hero-cta">Присоединиться к академии</a></div>
-        </div>
-    </section>
-
-    <!-- ===== CURRICULUM ===== -->
-    <section id="curriculum">
-        <div class="container" style="text-align: center;">
-            <span class="section-eyebrow">Программа обучения</span>
-            <h2 class="section-title">Что вы освоите</h2>
-            <div class="gold-rule"></div>
-
-            <div class="modules-grid">
-                <div class="module-card reveal">
-                    <div class="module-num">Модуль I</div>
-                    <span class="module-icon">📱</span>
-                    <div class="module-title">Основы SMM и Instagram</div>
-                    <ul class="module-list">
-                        <li>Как работают алгоритмы соцсетей в 2024 году</li>
-                        <li>Профессиональная упаковка профиля клиента</li>
-                        <li>Контент-стратегия с нуля за 3 часа</li>
-                        <li>Органический рост: первые 1000 подписчиков</li>
-                    </ul>
-                </div>
-                <div class="module-card reveal">
-                    <div class="module-num">Модуль II</div>
-                    <span class="module-icon">✍️</span>
-                    <div class="module-title">Контент и копирайтинг</div>
-                    <ul class="module-list">
-                        <li>Продающие тексты без воды и шаблонов</li>
-                        <li>Сторис, Reels и карусели, которые вирусятся</li>
-                        <li>Дизайн в Canva: профессиональный уровень</li>
-                        <li>Контент-план на месяц за 2 часа</li>
-                    </ul>
-                </div>
-                <div class="module-card reveal">
-                    <div class="module-num">Модуль III</div>
-                    <span class="module-icon">🎯</span>
-                    <div class="module-title">Таргет и реклама</div>
-                    <ul class="module-list">
-                        <li>Настройка рекламного кабинета с нуля</li>
-                        <li>Точный портрет целевой аудитории</li>
-                        <li>Рабочие связки на бюджете от 500₽/день</li>
-                        <li>Аналитика, А/Б тесты и масштабирование</li>
-                    </ul>
-                </div>
-                <div class="module-card reveal">
-                    <div class="module-num">Модуль IV</div>
-                    <span class="module-icon">💼</span>
-                    <div class="module-title">Работа с клиентами</div>
-                    <ul class="module-list">
-                        <li>Где и как найти первых платящих клиентов</li>
-                        <li>Договор, цены и переговоры без страха</li>
-                        <li>Отчётность, коммуникация, удержание клиента</li>
-                        <li>Масштабирование: своя команда и агентство</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="section-cta-wrap"><a href="#pricing" class="hero-cta">Присоединиться к академии</a></div>
+            <div class="section-cta-wrap"><a href="#pricing" class="hero-cta">Получить ранний доступ</a></div>
         </div>
     </section>
 
@@ -1614,128 +1206,121 @@
             <div class="author-grid">
                 <div class="author-photo-wrap reveal">
                     <div class="author-frame">
-                        <img src="newnewcamipic_nobg.png" alt="Камилла" class="author-photo-img">
+                        <img src="cami_nobg.png" alt="Камилла" class="author-photo-img">
                     </div>
                     <div class="author-stamp">
-                        Декан академии<br>с 2019 года
+                        Основатель<br>клуба
                     </div>
                 </div>
 
                 <div class="reveal">
-                    <span class="section-eyebrow">Ваш наставник</span>
+                    <span class="section-eyebrow">Ведущая клуба</span>
                     <h2 class="author-name">Камилла</h2>
-                    <div class="author-role">Декан CBC Academy</div>
+                    <div class="author-role">Основатель Cami Freedom Club</div>
                     <p class="author-bio">
-                        За 7 лет в digital-маркетинге Камилла вырастила более 500 SMM-специалистов
-                        с абсолютного нуля. Её студенты работают с брендами уровня premium и luxury,
-                        зарабатывают от 100 000₽ в месяц и живут так, как всегда мечтали.
-                        Камилла убеждена: каждая женщина заслуживает финансовой независимости.
+                        Предприниматель и блогер с аудиторией больше миллиона.
+                        Начала с тортов на заказ в 20 лет. Потеряла 6&nbsp;000&nbsp;000₽ на кафе,
+                        закрыла, ушла в онлайн. Сейчас зарабатывает больше миллиона в месяц
+                        и работает откуда хочет.
+                    </p>
+                    <p class="author-bio">
+                        Открыла клуб потому что устала отвечать на одни и те же вопросы
+                        в директе. Теперь отвечает здесь — для тех, кто серьёзно.
                     </p>
 
                     <div class="credentials">
                         <div class="cred">
-                            <span class="cred-icon">🏆</span>
+                            <span class="cred-icon">👥</span>
                             <div>
-                                <span class="cred-main">Топ-10 SMM-специалистов России</span>
-                                <span class="cred-sub">Рейтинг Digital-агентств, 2023</span>
-                            </div>
-                        </div>
-                        <div class="cred">
-                            <span class="cred-icon">📊</span>
-                            <div>
-                                <span class="cred-main">500+ выпускников</span>
-                                <span class="cred-sub">Работают в России, Европе и ОАЭ</span>
+                                <span class="cred-main">Аудитория больше миллиона</span>
+                                <span class="cred-sub">Блогер с живой и активной аудиторией</span>
                             </div>
                         </div>
                         <div class="cred">
                             <span class="cred-icon">💰</span>
                             <div>
-                                <span class="cred-main">Личный оборот 2 млн ₽/мес</span>
-                                <span class="cred-sub">Через агентство и преподавание</span>
+                                <span class="cred-main">Больше миллиона в месяц</span>
+                                <span class="cred-sub">Заработок полностью онлайн</span>
                             </div>
                         </div>
                         <div class="cred">
-                            <span class="cred-icon">🎓</span>
+                            <span class="cred-icon">🌍</span>
                             <div>
-                                <span class="cred-main">МГУ, факультет журналистики</span>
-                                <span class="cred-sub">+ Сертификат Meta Business Partner</span>
+                                <span class="cred-main">Работает откуда хочет</span>
+                                <span class="cred-sub">Без офиса, без привязки к городу</span>
+                            </div>
+                        </div>
+                        <div class="cred">
+                            <span class="cred-icon">🎂</span>
+                            <div>
+                                <span class="cred-main">Начала в 20 лет с нуля</span>
+                                <span class="cred-sub">Торты → кафе → онлайн. Прошла всё сама.</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="section-cta-wrap"><a href="#pricing" class="hero-cta">Присоединиться к академии</a></div>
+            <div class="section-cta-wrap"><a href="#pricing" class="hero-cta">Получить ранний доступ</a></div>
         </div>
     </section>
 
     <!-- ===== PRICING ===== -->
-    <section id="pricing">
+    <section id="pricing" class="section-dark">
         <div class="container">
-            <span class="section-eyebrow">Раннее бронирование</span>
-            <h2 class="section-title">Зафиксируй цену<br>подписки</h2>
+            <span class="section-eyebrow">Ранний доступ</span>
+            <h2 class="section-title">ПОЛУЧИ <span style="color:var(--gold)">РАННИЙ ДОСТУП</span></h2>
             <div class="gold-rule"></div>
 
             <div class="pricing-wrap">
                 <div class="pricing-card reveal">
-                    <div class="pricing-badge">Ранняя цена · Ежемесячная подписка</div>
-                    <div class="pricing-plan-label">Предзапись на курс</div>
-                    <span class="pricing-amount">9 900 ₽</span>
-                    <div class="pricing-period">в месяц · скидка 40% для ранних участников</div>
+                    <div class="pricing-badge">Цена предзапуска · После старта вырастет</div>
+                    <div class="pricing-plan-label">Ежемесячная подписка</div>
+                    <span class="pricing-amount">1&nbsp;490 ₽</span>
+                    <div class="pricing-period">в месяц · цена предзапуска</div>
+
+                    <div class="pricing-message">
+                        1&nbsp;490₽/месяц — это цена предзапуска. После старта клуба цена вырастет.
+                        Зарегистрируйся сейчас — и эта цена останется твоей.
+                    </div>
 
                     <ul class="pricing-features">
-                        <li>Полный доступ ко всем 4 модулям программы</li>
-                        <li>Персональная консультация с деканом Камиллой</li>
-                        <li>Закрытый чат студентов CBC Academy 24/7</li>
-                        <li>Детальный разбор вашего аккаунта и стратегии</li>
-                        <li>Диплом выпускника по завершении программы</li>
-                        <li>Поддержка в поиске первых клиентов</li>
-                        <li>Доступ к базе знаний и обновлениям навсегда</li>
-                        <li>🔒 Цена зафиксирована — больше не повысится</li>
+                        <li>💰 AI-Заработок — СММ и ИИ-инструменты из дома</li>
+                        <li>👑 Лайфстайл — жизнь Камиллы которую она не показывает публично</li>
+                        <li>🍰 Рецепты — авторские рецепты на камеру</li>
+                        <li>🏥 Здоровье — анализы, энергия, уход за собой без воды</li>
+                        <li>🔴 Живой эфир — Q&amp;A с Камиллой раз в месяц, 60–90 минут</li>
+                        <li>🎓 Курс «ИИ-СММ Заработок» — внутри подписки</li>
                     </ul>
 
                     <hr class="pricing-divider">
 
-                    <!-- Signup form -->
                     <div id="formWrap">
                         <p class="form-hint">
-                            Оставь имя и email — мы сообщим о дате старта и зафиксируем твою цену раннего доступа
+                            Оставь имя и email — узнаешь первой о дате старта и сохранишь цену предзапуска
                         </p>
                         <form class="signup-form" id="signupForm" onsubmit="handleSignup(event)" novalidate>
                             <div>
-                                <input
-                                    type="text"
-                                    class="f-input"
-                                    id="f-name"
-                                    placeholder="Ваше имя"
-                                    autocomplete="given-name"
-                                    required
-                                >
+                                <input type="text" class="f-input" id="f-name"
+                                    placeholder="Имя" autocomplete="given-name" required>
                             </div>
                             <div>
-                                <input
-                                    type="email"
-                                    class="f-input"
-                                    id="f-email"
-                                    placeholder="Ваш email"
-                                    autocomplete="email"
-                                    required
-                                >
+                                <input type="email" class="f-input" id="f-email"
+                                    placeholder="Email" autocomplete="email" required>
                             </div>
                             <div class="error-msg" id="formError">Пожалуйста, заполните все поля корректно</div>
                             <button type="submit" class="submit-btn" id="submitBtn">
-                                Присоединиться к академии
+                                Получить ранний доступ
                             </button>
                         </form>
                     </div>
 
-                    <!-- Success state -->
                     <div class="success-msg" id="successMsg">
-                        <span class="success-icon">🎓</span>
-                        <div class="success-title">Ты в списке ранних участников!</div>
+                        <span class="success-icon">✨</span>
+                        <div class="success-title">Ты в списке!</div>
                         <p class="success-body">
                             Твоё место зарезервировано.<br>
-                            Камилла лично свяжется с тобой перед стартом.<br>
-                            Жди письмо на email — детали уже в пути.
+                            Камилла лично свяжется с тобой перед запуском.<br>
+                            Жди письмо — детали уже в пути.
                         </p>
                     </div>
                 </div>
@@ -1747,69 +1332,57 @@
     <section id="faq">
         <div class="container">
             <span class="section-eyebrow">Вопросы и ответы</span>
-            <h2 class="section-title">Часто спрашивают</h2>
+            <h2 class="section-title">ВОПРОСЫ <span style="color:var(--gold)">ОТВЕТЫ</span></h2>
             <div class="gold-rule"></div>
 
             <div class="faq-list">
-
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)" type="button">
-                        Нужен ли опыт в маркетинге или дизайне?
+                        Что такое Cami Freedom Club?
                         <span class="faq-toggle">+</span>
                     </button>
                     <div class="faq-a">
                         <div class="faq-a-inner">
-                            Абсолютно нет. CBC Academy создана специально для начинающих — мы стартуем
-                            с самых основ и ведём вас шаг за шагом. Большинство выпускников пришли без
-                            какого-либо опыта в digital. Всё, что нужно — желание учиться и смартфон.
-                            Уже через месяц вы будете знать больше, чем 90% самоучек в интернете.
+                            Закрытый клуб по подписке с двумя составляющими. Первое — Telegram-сообщество где Камилла публикует эксклюзивный контент каждую неделю: лайфстайл, рецепты, здоровье, живые эфиры. Второе — курс по заработку на СММ с помощью ИИ-инструментов, который открывается поэтапно внутри подписки.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)" type="button">
-                        Сколько времени нужно уделять учёбе каждый день?
+                        Когда запуск?
                         <span class="faq-toggle">+</span>
                     </button>
                     <div class="faq-a">
                         <div class="faq-a-inner">
-                            От 1 до 2 часов в день — этого более чем достаточно. Программа построена так,
-                            чтобы её можно было органично совмещать с домашними делами и уходом за детьми.
-                            Все материалы доступны 24/7, а значит вы учитесь в своём ритме — утром,
-                            во время дневного сна ребёнка или вечером после ужина.
+                            Дата будет объявлена в ближайшее время. Все кто оставил заявку узнают первыми и автоматически получают доступ по цене предзапуска.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)" type="button">
-                        Когда я смогу найти первых клиентов?
+                        Можно ли отменить подписку?
                         <span class="faq-toggle">+</span>
                     </button>
                     <div class="faq-a">
                         <div class="faq-a-inner">
-                            Студенты программы находят первых клиентов уже во время обучения — после первого или второго модуля. Мы помогаем с портфолио, скриптами переговоров и конкретной стратегией поиска. 87% выпускников получили оплаченные проекты в течение первых 60 дней после старта обучения.
+                            Да, в любой момент без объяснений и штрафов.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-q" onclick="toggleFaq(this)" type="button">
-                        Есть ли поддержка после окончания курса?
+                        Что будет если я не зарегистрируюсь до запуска?
                         <span class="faq-toggle">+</span>
                     </button>
                     <div class="faq-a">
                         <div class="faq-a-inner">
-                            Да! Выпускники CBC Academy получают постоянный доступ к закрытому чату
-                            сообщества, где можно задать вопрос, найти партнёра или получить рекомендацию
-                            клиента. Декан Камилла проводит ежемесячные Q&A-сессии для всех выпускников.
-                            Вы в семье навсегда.
+                            Клуб останется открытым, но цена предзапуска будет недоступна. После старта стоимость подписки вырастет.
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </section>
@@ -1818,22 +1391,21 @@
     <footer>
         <div class="container">
             <div class="footer-logo">
-                <span class="footer-logo-text">CBC&nbsp;ACADEMY</span>
+                <span class="footer-logo-text">CAMI <span style="color:var(--gold)">FREEDOM</span> CLUB</span>
             </div>
-            <div class="footer-tagline">Элитное образование в SMM · С нуля до профессионала</div>
+            <div class="footer-tagline">«Просить деньги — это наказание. Зарабатывать сама — это свобода.»</div>
 
             <nav class="footer-nav" aria-label="Footer navigation">
-                <a href="#university">Академия</a>
-                <a href="#curriculum">Программа</a>
-                <a href="#author">Декан</a>
-                <a href="#results">Результаты</a>
-                <a href="#pricing">Записаться</a>
+                <a href="#club">Клуб</a>
+                <a href="#for-whom">Для кого</a>
+                <a href="#author">Камилла</a>
+                <a href="#pricing">Вступить</a>
                 <a href="#faq">FAQ</a>
             </nav>
 
             <hr class="footer-divider">
             <p class="footer-legal">
-                © 2026 CBC Academy. Все права защищены.
+                © 2026 Cami Freedom Club. Все права защищены.
             </p>
         </div>
     </footer>
@@ -1842,14 +1414,16 @@
     /* ========================================
        NAVIGATION — SCROLL SHRINK + HAMBURGER
        ======================================== */
-    const navbar   = document.getElementById('navbar');
+    const navbar    = document.getElementById('navbar');
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
 
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY > 60;
         const isMob = window.innerWidth <= 900;
-        navbar.style.padding = scrolled ? `6px ${isMob ? '24px' : '48px'}` : `10px ${isMob ? '24px' : '48px'}`;
+        navbar.style.padding = scrolled
+            ? `8px ${isMob ? '24px' : '48px'}`
+            : `14px ${isMob ? '24px' : '48px'}`;
     }, { passive: true });
 
     hamburger.addEventListener('click', () => {
@@ -1866,16 +1440,12 @@
        FAQ ACCORDION
        ======================================== */
     function toggleFaq(btn) {
-        const answer  = btn.nextElementSibling;
-        const isOpen  = btn.classList.contains('active');
-
-        // close all
+        const answer = btn.nextElementSibling;
+        const isOpen = btn.classList.contains('active');
         document.querySelectorAll('.faq-q').forEach(q => {
             q.classList.remove('active');
             q.nextElementSibling.classList.remove('open');
         });
-
-        // open this one if it was closed
         if (!isOpen) {
             btn.classList.add('active');
             answer.classList.add('open');
@@ -1887,9 +1457,8 @@
        ======================================== */
     const revealEls = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // stagger siblings
                 const siblings = [...entry.target.parentElement.children];
                 const idx = siblings.indexOf(entry.target);
                 setTimeout(() => {
@@ -1899,21 +1468,18 @@
             }
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
     revealEls.forEach(el => revealObserver.observe(el));
 
     /* ========================================
-       FORM SUBMISSION + SQLITE SAVE
+       FORM SUBMISSION
        ======================================== */
     async function handleSignup(e) {
         e.preventDefault();
-
         const nameVal  = document.getElementById('f-name').value.trim();
         const emailVal = document.getElementById('f-email').value.trim();
         const errEl    = document.getElementById('formError');
         const btn      = document.getElementById('submitBtn');
 
-        // Basic validation
         const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!nameVal || !emailRx.test(emailVal)) {
             errEl.classList.add('show');
@@ -1921,52 +1487,44 @@
         }
         errEl.classList.remove('show');
 
-        // Loading state
         btn.classList.add('loading');
         btn.textContent = 'Отправляем...';
 
         const payload = { name: nameVal, email: emailVal };
 
         try {
-            // Try to POST to the companion server (SQLite backend)
             const res = await fetch('/api/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),
                 signal: AbortSignal.timeout(5000)
             });
-
             if (!res.ok) throw new Error('Server error');
-            console.log('[CBC Academy] Signup saved to SQLite:', payload);
-
+            console.log('[Cami Freedom Club] Signup saved:', payload);
         } catch (err) {
-            // Fallback: save to localStorage if server isn't running
-            const stored = JSON.parse(localStorage.getItem('cbc_signups') || '[]');
+            const stored = JSON.parse(localStorage.getItem('cfc_signups') || '[]');
             stored.push({ ...payload, ts: new Date().toISOString(), id: Date.now() });
-            localStorage.setItem('cbc_signups', JSON.stringify(stored));
-            console.log('[CBC Academy] Signup saved to localStorage (server offline):', payload);
+            localStorage.setItem('cfc_signups', JSON.stringify(stored));
+            console.log('[Cami Freedom Club] Signup saved to localStorage:', payload);
         }
 
-        // Show success regardless
         document.getElementById('formWrap').style.display = 'none';
         document.getElementById('successMsg').classList.add('show');
     }
 
-    /* ========================================
-       SMOOTH NAVBAR MOBILE COLLAPSE ON LINK
-       ======================================== */
     document.querySelectorAll('.nav-links a, .nav-btn').forEach(a => {
         a.addEventListener('click', closeMob);
     });
 
-    /* ===== PRELOADER ===== */
+    /* ========================================
+       PRELOADER
+       ======================================== */
     (function () {
         const pre = document.getElementById('preloader');
         if (!pre) return;
         document.body.style.overflow = 'hidden';
 
-        // Spawn floating gold star particles
-        const goldShades = ['#C8A52A', '#D4B96A', '#D9B840', '#F0DA90', '#BFA040'];
+        const goldShades = ['#C9A84C', '#D4B96A', '#E5C86E', '#F0DA90', '#BFA040'];
         for (let i = 0; i < 42; i++) {
             const s = document.createElement('div');
             s.className = 'pl-star';
@@ -1992,7 +1550,7 @@
         };
 
         window.addEventListener('load', () => setTimeout(dismiss, 4600));
-        setTimeout(dismiss, 8000); // safety net
+        setTimeout(dismiss, 8000);
     })();
     </script>
 
