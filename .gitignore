@@ -2,6 +2,8 @@ node_modules/
 signups.db
 *.jpeg
 *.jpg
+!cami_pic.jpeg
+!hero_bg.jpg
 color*.jpeg
 font.jpeg
 style.jpeg
