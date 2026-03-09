@@ -25,13 +25,16 @@ db.exec(`
         id        INTEGER PRIMARY KEY AUTOINCREMENT,
         name      TEXT    NOT NULL,
         email     TEXT    NOT NULL,
+        phone     TEXT    NOT NULL DEFAULT '',
         created_at TEXT   NOT NULL DEFAULT (datetime('now', 'localtime'))
     );
     CREATE UNIQUE INDEX IF NOT EXISTS idx_email ON signups(email);
 `);
 
+try { db.exec(`ALTER TABLE signups ADD COLUMN phone TEXT NOT NULL DEFAULT ''`); } catch(e) {}
+
 const insertSignup = db.prepare(
-    `INSERT OR IGNORE INTO signups (name, email) VALUES (?, ?)`
+    `INSERT OR IGNORE INTO signups (name, email, phone) VALUES (?, ?, ?)`
 );
 
 /* ── HTTP server ─────────────────────────────────────── */
@@ -42,17 +45,17 @@ const server = http.createServer((req, res) => {
         req.on('data', chunk => body += chunk.toString());
         req.on('end', () => {
             try {
-                const { name, email } = JSON.parse(body);
+                const { name, email, phone } = JSON.parse(body);
 
-                if (!name || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                if (!name || !email || !phone || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                     res.writeHead(400, { 'Content-Type': 'application/json' });
                     return res.end(JSON.stringify({ error: 'Invalid input' }));
                 }
 
-                const info = insertSignup.run(name.trim(), email.trim().toLowerCase());
+                const info = insertSignup.run(name.trim(), email.trim().toLowerCase(), phone.trim());
                 const isNew = info.changes > 0;
 
-                console.log(`[signup] ${isNew ? 'NEW' : 'DUP'} | ${name} <${email}>`);
+                console.log(`[signup] ${isNew ? 'NEW' : 'DUP'} | ${name} <${email}> ${phone}`);
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ ok: true, new: isNew }));
@@ -85,6 +88,7 @@ const server = http.createServer((req, res) => {
         '.ico':  'image/x-icon',
         '.png':  'image/png',
         '.jpg':  'image/jpeg',
+        '.jpeg': 'image/jpeg',
         '.svg':  'image/svg+xml',
         '.woff2':'font/woff2',
     }[ext] || 'text/plain';
